@@ -1407,10 +1407,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentUser = getCurrentUser();
         const userType = (currentUser?.tipo || '').toLowerCase();
         const isComercial = userType === 'comercial';
+        const isGerencia = userType === 'gerencia';
 
         document.querySelectorAll('.delete-btn').forEach(btn => {
-            // Ocultar botão de exclusão para usuários comerciais
-            if (isComercial) {
+            // Ocultar botão de exclusão para usuários comerciais e gerencia
+            if (isComercial || isGerencia) {
                 btn.style.display = 'none';
                 return;
             }
@@ -1432,8 +1433,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         
         document.querySelectorAll('.edit-btn').forEach(btn => {
-            // Ocultar botão de edição para usuários comerciais
-            if (isComercial) {
+            // Ocultar botão de edição para usuários comerciais e gerencia
+            if (isComercial || isGerencia) {
                 btn.style.display = 'none';
                 return;
             }

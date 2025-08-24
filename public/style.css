@@ -1312,10 +1312,10 @@ body:not(.app-visible) .sidebar-overlay.show {
 
     .predefined-periods {
         display: flex;
-        flex-wrap: nowrap;
-        overflow: hidden;
-        position: relative;
-        justify-content:center;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+        margin-top: 10px;
     }
 
     /* Tabelas com scroll horizontal melhorado */
@@ -1405,14 +1405,22 @@ body:not(.app-visible) .sidebar-overlay.show {
     }
 
     .period-btn {
-        flex: 1;
-        min-width: 0;
-        padding: 10px 8px;
+        flex: 0 0 auto;
+        min-width: 60px;
+        padding: 8px 12px;
+        margin: 4px;
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
     }
 
-    /* Esconder ícones nos botões de período para economizar espaço */
+    /* Mostrar ícones nos botões de período para melhor usabilidade */
     .period-btn i {
-        display: none;
+        display: inline-block;
+        margin-right: 4px;
+        font-size: 14px;
     }
 
     /* Filtros container mais compacto */
