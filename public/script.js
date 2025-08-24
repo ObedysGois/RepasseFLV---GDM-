@@ -1344,6 +1344,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentUser = getCurrentUser();
         const userType = (currentUser?.tipo || '').toLowerCase();
         const isComercial = userType === 'comercial';
+        const isGerencia = userType === 'gerencia';
+        const isOperacao = userType === 'operacao' || userType === 'operação';
 
         data.forEach(registro => {
             const row = document.createElement('tr');
@@ -1356,8 +1358,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 return '';
             })();
             
-            // Se for usuário comercial, desabilitar o campo de quantidade repassada
-            const qtdRepassadaInput = isComercial 
+            // Se for usuário comercial ou gerencia, desabilitar o campo de quantidade repassada
+            const qtdRepassadaInput = isComercial || isGerencia
                 ? `<input type="number" class="qtd-repassada-input" data-id="${registro.id}" value="${registro.quantidadeRepassada ?? ''}" min="0" step="any" disabled />`
                 : `<input type="number" class="qtd-repassada-input" data-id="${registro.id}" value="${registro.quantidadeRepassada ?? ''}" min="0" step="any" />`;
             
@@ -1379,10 +1381,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>${registro.motivo || ''}</td>
                 <td>${registro['tempo(dias)'] || ''}</td>
                 <td>
-                    <button class="quantidade-btn button button-sm" data-id="${registro.id}" title="Adicionar Quantidade">
+                    ${isGerencia || isOperacao ? 
+                    `<button class="quantidade-btn button button-sm" data-id="${registro.id}" title="Adicionar Quantidade" style="display: none;">
                         <span class="icon">➕</span>
                         <span>Quantidade</span>
-                    </button>
+                    </button>` : 
+                    `<button class="quantidade-btn button button-sm" data-id="${registro.id}" title="Adicionar Quantidade">
+                        <span class="icon">➕</span>
+                        <span>Quantidade</span>
+                    </button>`}
                 </td>
                 <td>${registro.quantidadeSolicitada ?? ''}</td>
                 <td>
@@ -1448,8 +1455,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Atualização de Qtd. Repassada com auto-status
         document.querySelectorAll('.qtd-repassada-input').forEach(inp => {
-            // Desabilitar campo de quantidade repassada para usuários comerciais
-            if (isComercial) {
+            // Desabilitar campo de quantidade repassada para usuários comerciais e gerencia
+            if (isComercial || isGerencia) {
                 inp.disabled = true;
                 return;
             }
@@ -1509,6 +1516,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Botão de quantidade
         document.querySelectorAll('.quantidade-btn').forEach(btn => {
+            // Ocultar botão de quantidade para usuários gerencia e operacao
+            if (isGerencia || isOperacao) {
+                btn.style.display = 'none';
+                return;
+            }
+            
             btn.addEventListener('click', (e) => {
                 const id = e.currentTarget.dataset.id;
                 const registro = registrosCompletos.find(r => r.id === id);
