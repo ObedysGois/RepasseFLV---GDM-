@@ -1,0 +1,1632 @@
+nder
+
+All logs
+Search
+Search
+
+Live tail
+GMT-3
+
+Menu
+
+==> Cloning from https://github.com/ObedysGois/RepasseFLV---GDM-
+==> Checking out commit b6c624c6ecc8231d35c264313641c07518f0cbf8 in branch main
+==> Downloading cache...
+==> Transferred 63MB in 7s. Extraction took 2s.
+==> Using Node.js version 18.18.0 via environment variable NODE_VERSION
+==> Node.js version 18.18.0 has reached end-of-life.
+==> Upgrade to a maintained version to receive important security updates.
+==> Information on maintained Node.js versions: https://nodejs.org/en/about/previous-releases
+==> Docs on specifying a Node.js version: https://render.com/docs/node-version
+==> Running build command 'npm install'...
+up to date, audited 127 packages in 442ms
+23 packages are looking for funding
+  run `npm fund` for details
+found 0 vulnerabilities
+==> Uploading build...
+==> Uploaded in 3.2s. Compression took 1.0s
+==> Build successful 🎉
+==> Deploying...
+==> Running 'npm run update:render'
+> repasselist-gdm-backend@1.0.0 update:render
+> bash render-update.sh
+=== Iniciando script de atualização ===
+NODE_VERSION: v18.18.0
+NODE_OPTIONS: --openssl-legacy-provider
+Verificando formato da chave privada...
+Formato da chave privada parece correto (contém 'BEGIN PRIVATE KEY')
+> repasselist-gdm-backend@1.0.0 start
+> node src/server.js
+[dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+[dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+Usando credenciais das variáveis de ambiente
+Client email: sheets-editor@projeto-app-repasselist-gdm.iam.gserviceaccount.com
+Private key format check: Começa com: -----BEGIN PRIVATE KEY-----... Termina com: ...----END PRIVATE KEY-----
+⚠️  Node.js 18 and below are deprecated and will no longer be supported in future versions of @supabase/supabase-js. Please upgrade to Node.js 20 or later. For more information, visit: https://github.com/orgs/supabase/discussions/37217
+[dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+Tentando conectar ao Supabase...
+Credenciais Google OAuth ausentes. Configure google_oauth.json na raiz ou variáveis de ambiente.
+[Sincronização] Agendando sincronização a cada 30 minutos
+[Sincronização] Iniciando sincronização de registros...
+Servidor rodando em http://localhost:10000
+Sincronização automática entre Google Sheets e Supabase ativada
+[Sincronização] Total de registros no Google Sheets: 10
+Conexão básica com Supabase estabelecida
+[Sincronização] Total de registros no Supabase: 10
+[Supabase] Tentando atualizar registro com ID: S-REP.0000077
+[Supabase] Dados recebidos para atualização: {
+  id: 'S-REP.0000077',
+  dataRepasse: '2025-08-23',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '007.010 - Avocado Cat 2 Granel Cx 10kg',
+  familia: 'Abacate',
+  motivo: 'Baixa Qualidade',
+  dataRecebimento: '2025-08-08',
+  'tempo(dias)': '15',
+  observacao: 'teste',
+  'quantidade 1': '60',
+  'vendedor 1': 'Vinicius',
+  'quantidade 2': '10',
+  'vendedor 2': 'Ricardo',
+  'quantidade 3': '20',
+  'vendedor 3': 'Antonio',
+  'quantidade 4': '20',
+  'vendedor 4': 'Nixon',
+  'quantidade 5': '5',
+  'vendedor 5': 'Outro',
+  quantidadeSolicitada: '105',
+  quantidadeRepassada: '105',
+  status: '100% Concluído',
+  usuarioComercial: 'usuariodocemel@gmail.com'
+}
+[Supabase] Normalizando dados: {"id":"S-REP.0000077","dataRepasse":"2025-08-23","usuarioOperacoes":"usuariodocemel@gmail.com","produto":"007.010 - Avocado Cat 2 Granel Cx 10kg","familia":"Abacate","motivo":"Baixa Qualidade","dataRecebimento":"2025-08-08","tempo(dias)":"15","observacao":"teste","quantidade 1":"60","vendedor 1":"Vinicius","quantidade 2":"10","vendedor 2":"Ricardo","quantidade 3":"20","vendedor 3":"Antonio","quantidade 4":"20","vendedor 4":"Nixon","quantidade 5":"5","vendedor 5":"Outro","quantidadeSolicitada":"105","quantidadeRepassada":"105","status":"100% Concluído","usuarioComercial":"usuariodocemel@gmail.com"}
+[Supabase] Mapeando campo 'id' para 'id'
+[Supabase] Definindo 'id' = "S-REP.0000077"
+[Supabase] Mapeando campo 'dataRepasse' para 'dataRepasse'
+[Supabase] Definindo 'dataRepasse' = "2025-08-23"
+[Supabase] Mapeando campo 'usuarioOperacoes' para 'usuarioOperacoes'
+[Supabase] Definindo 'usuarioOperacoes' = "usuariodocemel@gmail.com"
+[Supabase] Mapeando campo 'produto' para 'produto'
+[Supabase] Definindo 'produto' = "007.010 - Avocado Cat 2 Granel Cx 10kg"
+[Supabase] Mapeando campo 'familia' para 'familia'
+[Supabase] Definindo 'familia' = "Abacate"
+[Supabase] Mapeando campo 'motivo' para 'motivo'
+[Supabase] Definindo 'motivo' = "Baixa Qualidade"
+[Supabase] Mapeando campo 'dataRecebimento' para 'dataRecebimento'
+[Supabase] Definindo 'dataRecebimento' = "2025-08-08"
+[Supabase] Mapeando campo 'tempo(dias)' para 'tempo(dias)'
+[Supabase] Definindo 'tempo(dias)' = "15"
+[Supabase] Mapeando campo 'observacao' para 'observacao'
+[Supabase] Definindo 'observacao' = "teste"
+[Supabase] Mapeando campo 'quantidade 1' para 'quantidade 1'
+[Supabase] Definindo 'quantidade 1' = "60"
+[Supabase] Mapeando campo 'vendedor 1' para 'vendedor 1'
+[Supabase] Definindo 'vendedor 1' = "Vinicius"
+[Supabase] Mapeando campo 'quantidade 2' para 'quantidade 2'
+[Supabase] Definindo 'quantidade 2' = "10"
+[Supabase] Mapeando campo 'vendedor 2' para 'vendedor 2'
+[Supabase] Definindo 'vendedor 2' = "Ricardo"
+[Supabase] Mapeando campo 'quantidade 3' para 'quantidade 3'
+[Supabase] Definindo 'quantidade 3' = "20"
+[Supabase] Mapeando campo 'vendedor 3' para 'vendedor 3'
+[Supabase] Definindo 'vendedor 3' = "Antonio"
+[Supabase] Mapeando campo 'quantidade 4' para 'quantidade 4'
+[Supabase] Definindo 'quantidade 4' = "20"
+[Supabase] Mapeando campo 'vendedor 4' para 'vendedor 4'
+[Supabase] Definindo 'vendedor 4' = "Nixon"
+[Supabase] Mapeando campo 'quantidade 5' para 'quantidade 5'
+[Supabase] Definindo 'quantidade 5' = "5"
+[Supabase] Mapeando campo 'vendedor 5' para 'vendedor 5'
+[Supabase] Definindo 'vendedor 5' = "Outro"
+[Supabase] Mapeando campo 'quantidadeSolicitada' para 'quantidadeSolicitada'
+[Supabase] Definindo 'quantidadeSolicitada' = "105"
+[Supabase] Mapeando campo 'quantidadeRepassada' para 'quantidadeRepassada'
+[Supabase] Definindo 'quantidadeRepassada' = "105"
+[Supabase] Mapeando campo 'status' para 'status'
+[Supabase] Definindo 'status' = "100% Concluído"
+[Supabase] Mapeando campo 'usuarioComercial' para 'usuarioComercial'
+[Supabase] Definindo 'usuarioComercial' = "usuariodocemel@gmail.com"
+[Supabase] Dados normalizados para atualização: {
+  id: 'S-REP.0000077',
+  dataRepasse: '2025-08-23',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '007.010 - Avocado Cat 2 Granel Cx 10kg',
+  familia: 'Abacate',
+  motivo: 'Baixa Qualidade',
+  dataRecebimento: '2025-08-08',
+  'tempo(dias)': '15',
+  observacao: 'teste',
+  'quantidade 1': '60',
+  'vendedor 1': 'Vinicius',
+  'quantidade 2': '10',
+  'vendedor 2': 'Ricardo',
+  'quantidade 3': '20',
+  'vendedor 3': 'Antonio',
+  'quantidade 4': '20',
+  'vendedor 4': 'Nixon',
+  'quantidade 5': '5',
+  'vendedor 5': 'Outro',
+  quantidadeSolicitada: '105',
+  quantidadeRepassada: '105',
+  status: '100% Concluído',
+  usuarioComercial: 'usuariodocemel@gmail.com'
+}
+[Supabase] Enviando dados para atualização: {"id":"S-REP.0000077","dataRepasse":"2025-08-23","usuarioOperacoes":"usuariodocemel@gmail.com","produto":"007.010 - Avocado Cat 2 Granel Cx 10kg","familia":"Abacate","motivo":"Baixa Qualidade","dataRecebimento":"2025-08-08","tempo(dias)":"15","observacao":"teste","quantidade 1":"60","vendedor 1":"Vinicius","quantidade 2":"10","vendedor 2":"Ricardo","quantidade 3":"20","vendedor 3":"Antonio","quantidade 4":"20","vendedor 4":"Nixon","quantidade 5":"5","vendedor 5":"Outro","quantidadeSolicitada":"105","quantidadeRepassada":"105","status":"100% Concluído","usuarioComercial":"usuariodocemel@gmail.com"}
+[Supabase] Executando query de atualização para ID S-REP.0000077
+Tabela Registros acessada com sucesso
+Tabela historico já existe.
+[Supabase] Obtendo estrutura da tabela Registros...
+[Supabase] Resultado da query: {
+  data: [
+    {
+      id: 'S-REP.0000077',
+      dataRepasse: '2025-08-23',
+      usuarioOperacoes: 'usuariodocemel@gmail.com',
+      produto: '007.010 - Avocado Cat 2 Granel Cx 10kg',
+      familia: 'Abacate',
+      motivo: 'Baixa Qualidade',
+      dataRecebimento: '2025-08-08',
+      'tempo(dias)': 15,
+      observacao: 'teste',
+      'vendedor 1': 'Vinicius',
+      quantidadeSolicitada: 105,
+      quantidadeRepassada: 105,
+      status: '100% Concluído',
+      usuarioComercial: 'usuariodocemel@gmail.com',
+      'quantidade 2': 10,
+      'quantidade 1': 60,
+      'quantidade 3': 20,
+      'quantidade 4': 20,
+      'quantidade 5': 5,
+      'vendedor 3': 'Antonio',
+      'vendedor 2': 'Ricardo',
+      'vendedor 4': 'Nixon',
+      'vendedor 5': 'Outro'
+    }
+  ],
+  error: null
+}
+[Supabase] Registro atualizado com sucesso: {
+  id: 'S-REP.0000077',
+  dataRepasse: '2025-08-23',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '007.010 - Avocado Cat 2 Granel Cx 10kg',
+  familia: 'Abacate',
+  motivo: 'Baixa Qualidade',
+  dataRecebimento: '2025-08-08',
+  'tempo(dias)': 15,
+  observacao: 'teste',
+  'vendedor 1': 'Vinicius',
+  quantidadeSolicitada: 105,
+  quantidadeRepassada: 105,
+  status: '100% Concluído',
+  usuarioComercial: 'usuariodocemel@gmail.com',
+  'quantidade 2': 10,
+  'quantidade 1': 60,
+  'quantidade 3': 20,
+  'quantidade 4': 20,
+  'quantidade 5': 5,
+  'vendedor 3': 'Antonio',
+  'vendedor 2': 'Ricardo',
+  'vendedor 4': 'Nixon',
+  'vendedor 5': 'Outro'
+}
+[Supabase] Tentando atualizar registro com ID: S-REP.0000007
+[Supabase] Dados recebidos para atualização: {
+  id: 'S-REP.0000007',
+  dataRepasse: '2025-08-23',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '041.009 - Kiwi Hayward Imp Com Cal 25-27 Cx 10kg',
+  familia: 'Kiwi',
+  motivo: 'Podridao E Morfo',
+  dataRecebimento: '2025-08-03',
+  'tempo(dias)': '20',
+  observacao: '',
+  'quantidade 1': '50',
+  'vendedor 1': 'Antonio',
+  'quantidade 2': '',
+  'vendedor 2': '',
+  'quantidade 3': '',
+  'vendedor 3': '',
+  'quantidade 4': '',
+  'vendedor 4': '',
+  'quantidade 5': '',
+  'vendedor 5': '',
+  quantidadeSolicitada: '25',
+  quantidadeRepassada: '',
+  status: 'Pendente',
+  usuarioComercial: 'usuariodocemel@gmail.com'
+}
+[Supabase] Normalizando dados: {"id":"S-REP.0000007","dataRepasse":"2025-08-23","usuarioOperacoes":"usuariodocemel@gmail.com","produto":"041.009 - Kiwi Hayward Imp Com Cal 25-27 Cx 10kg","familia":"Kiwi","motivo":"Podridao E Morfo","dataRecebimento":"2025-08-03","tempo(dias)":"20","observacao":"","quantidade 1":"50","vendedor 1":"Antonio","quantidade 2":"","vendedor 2":"","quantidade 3":"","vendedor 3":"","quantidade 4":"","vendedor 4":"","quantidade 5":"","vendedor 5":"","quantidadeSolicitada":"25","quantidadeRepassada":"","status":"Pendente","usuarioComercial":"usuariodocemel@gmail.com"}
+[Supabase] Mapeando campo 'id' para 'id'
+[Supabase] Definindo 'id' = "S-REP.0000007"
+[Supabase] Mapeando campo 'dataRepasse' para 'dataRepasse'
+[Supabase] Definindo 'dataRepasse' = "2025-08-23"
+[Supabase] Mapeando campo 'usuarioOperacoes' para 'usuarioOperacoes'
+[Supabase] Definindo 'usuarioOperacoes' = "usuariodocemel@gmail.com"
+[Supabase] Mapeando campo 'produto' para 'produto'
+[Supabase] Definindo 'produto' = "041.009 - Kiwi Hayward Imp Com Cal 25-27 Cx 10kg"
+[Supabase] Mapeando campo 'familia' para 'familia'
+[Supabase] Definindo 'familia' = "Kiwi"
+[Supabase] Mapeando campo 'motivo' para 'motivo'
+[Supabase] Definindo 'motivo' = "Podridao E Morfo"
+[Supabase] Mapeando campo 'dataRecebimento' para 'dataRecebimento'
+[Supabase] Definindo 'dataRecebimento' = "2025-08-03"
+[Supabase] Mapeando campo 'tempo(dias)' para 'tempo(dias)'
+[Supabase] Definindo 'tempo(dias)' = "20"
+[Supabase] Mapeando campo 'observacao' para 'observacao'
+[Supabase] Definindo 'observacao' = ""
+[Supabase] Mapeando campo 'quantidade 1' para 'quantidade 1'
+[Supabase] Definindo 'quantidade 1' = "50"
+[Supabase] Mapeando campo 'vendedor 1' para 'vendedor 1'
+[Supabase] Definindo 'vendedor 1' = "Antonio"
+[Supabase] Mapeando campo 'quantidade 2' para 'quantidade 2'
+[Supabase] Campo numérico 'quantidade 2' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 2' para 'vendedor 2'
+[Supabase] Definindo 'vendedor 2' = ""
+[Supabase] Mapeando campo 'quantidade 3' para 'quantidade 3'
+[Supabase] Campo numérico 'quantidade 3' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 3' para 'vendedor 3'
+[Supabase] Definindo 'vendedor 3' = ""
+[Supabase] Mapeando campo 'quantidade 4' para 'quantidade 4'
+[Supabase] Campo numérico 'quantidade 4' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 4' para 'vendedor 4'
+[Supabase] Definindo 'vendedor 4' = ""
+[Supabase] Mapeando campo 'quantidade 5' para 'quantidade 5'
+[Supabase] Campo numérico 'quantidade 5' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 5' para 'vendedor 5'
+[Supabase] Definindo 'vendedor 5' = ""
+[Supabase] Mapeando campo 'quantidadeSolicitada' para 'quantidadeSolicitada'
+[Supabase] Definindo 'quantidadeSolicitada' = "25"
+[Supabase] Mapeando campo 'quantidadeRepassada' para 'quantidadeRepassada'
+[Supabase] Campo numérico 'quantidadeRepassada' vazio, definindo como null
+[Supabase] Mapeando campo 'status' para 'status'
+[Supabase] Definindo 'status' = "Pendente"
+[Supabase] Mapeando campo 'usuarioComercial' para 'usuarioComercial'
+[Supabase] Definindo 'usuarioComercial' = "usuariodocemel@gmail.com"
+[Supabase] Dados normalizados para atualização: {
+  id: 'S-REP.0000007',
+  dataRepasse: '2025-08-23',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '041.009 - Kiwi Hayward Imp Com Cal 25-27 Cx 10kg',
+  familia: 'Kiwi',
+  motivo: 'Podridao E Morfo',
+  dataRecebimento: '2025-08-03',
+  'tempo(dias)': '20',
+  observacao: '',
+  'quantidade 1': '50',
+  'vendedor 1': 'Antonio',
+  'quantidade 2': null,
+  'vendedor 2': '',
+  'quantidade 3': null,
+  'vendedor 3': '',
+  'quantidade 4': null,
+  'vendedor 4': '',
+  'quantidade 5': null,
+  'vendedor 5': '',
+  quantidadeSolicitada: '25',
+  quantidadeRepassada: null,
+  status: 'Pendente',
+  usuarioComercial: 'usuariodocemel@gmail.com'
+}
+[Supabase] Enviando dados para atualização: {"id":"S-REP.0000007","dataRepasse":"2025-08-23","usuarioOperacoes":"usuariodocemel@gmail.com","produto":"041.009 - Kiwi Hayward Imp Com Cal 25-27 Cx 10kg","familia":"Kiwi","motivo":"Podridao E Morfo","dataRecebimento":"2025-08-03","tempo(dias)":"20","observacao":"","quantidade 1":"50","vendedor 1":"Antonio","quantidade 2":null,"vendedor 2":"","quantidade 3":null,"vendedor 3":"","quantidade 4":null,"vendedor 4":"","quantidade 5":null,"vendedor 5":"","quantidadeSolicitada":"25","quantidadeRepassada":null,"status":"Pendente","usuarioComercial":"usuariodocemel@gmail.com"}
+[Supabase] Executando query de atualização para ID S-REP.0000007
+[Supabase] Erro ao listar tabelas: {
+  code: 'PGRST205',
+  details: null,
+  hint: null,
+  message: "Could not find the table 'public.information_schema.tables' in the schema cache"
+}
+[Supabase] Erro ao verificar estrutura da tabela Registros: {
+  code: 'PGRST205',
+  details: null,
+  hint: null,
+  message: "Could not find the table 'public.information_schema.tables' in the schema cache"
+}
+Estrutura da tabela Registros: {
+  exists: false,
+  error: "Could not find the table 'public.information_schema.tables' in the schema cache"
+}
+Conectado ao Supabase com sucesso!
+[Supabase] Resultado da query: {
+  data: [
+    {
+      id: 'S-REP.0000007',
+      dataRepasse: '2025-08-23',
+      usuarioOperacoes: 'usuariodocemel@gmail.com',
+      produto: '041.009 - Kiwi Hayward Imp Com Cal 25-27 Cx 10kg',
+      familia: 'Kiwi',
+      motivo: 'Podridao E Morfo',
+      dataRecebimento: '2025-08-03',
+      'tempo(dias)': 20,
+      observacao: '',
+      'vendedor 1': 'Antonio',
+      quantidadeSolicitada: 25,
+      quantidadeRepassada: null,
+      status: 'Pendente',
+      usuarioComercial: 'usuariodocemel@gmail.com',
+      'quantidade 2': null,
+      'quantidade 1': 50,
+      'quantidade 3': null,
+      'quantidade 4': null,
+      'quantidade 5': null,
+      'vendedor 3': '',
+      'vendedor 2': '',
+      'vendedor 4': '',
+      'vendedor 5': ''
+    }
+  ],
+  error: null
+}
+[Supabase] Registro atualizado com sucesso: {
+  id: 'S-REP.0000007',
+  dataRepasse: '2025-08-23',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '041.009 - Kiwi Hayward Imp Com Cal 25-27 Cx 10kg',
+  familia: 'Kiwi',
+  motivo: 'Podridao E Morfo',
+  dataRecebimento: '2025-08-03',
+  'tempo(dias)': 20,
+  observacao: '',
+  'vendedor 1': 'Antonio',
+  quantidadeSolicitada: 25,
+  quantidadeRepassada: null,
+  status: 'Pendente',
+  usuarioComercial: 'usuariodocemel@gmail.com',
+  'quantidade 2': null,
+  'quantidade 1': 50,
+  'quantidade 3': null,
+  'quantidade 4': null,
+  'quantidade 5': null,
+  'vendedor 3': '',
+  'vendedor 2': '',
+  'vendedor 4': '',
+  'vendedor 5': ''
+}
+[Supabase] Tentando atualizar registro com ID: S-REP.0000008
+[Supabase] Dados recebidos para atualização: {
+  id: 'S-REP.0000008',
+  dataRepasse: '2025-08-23',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '032.007 - Limao Siciliano Imp Eleg Cal 2 Cx 15kg',
+  familia: 'Limao',
+  motivo: 'Tempo De Estoque',
+  dataRecebimento: '2025-07-09',
+  'tempo(dias)': '45',
+  observacao: '',
+  'quantidade 1': '255',
+  'vendedor 1': 'Ricardo',
+  'quantidade 2': '',
+  'vendedor 2': '',
+  'quantidade 3': '',
+  'vendedor 3': '',
+  'quantidade 4': '',
+  'vendedor 4': '',
+  'quantidade 5': '',
+  'vendedor 5': '',
+  quantidadeSolicitada: '255',
+  quantidadeRepassada: '140',
+  status: 'Concluído Parcialmente',
+  usuarioComercial: 'usuariodocemel@gmail.com'
+}
+[Supabase] Normalizando dados: {"id":"S-REP.0000008","dataRepasse":"2025-08-23","usuarioOperacoes":"usuariodocemel@gmail.com","produto":"032.007 - Limao Siciliano Imp Eleg Cal 2 Cx 15kg","familia":"Limao","motivo":"Tempo De Estoque","dataRecebimento":"2025-07-09","tempo(dias)":"45","observacao":"","quantidade 1":"255","vendedor 1":"Ricardo","quantidade 2":"","vendedor 2":"","quantidade 3":"","vendedor 3":"","quantidade 4":"","vendedor 4":"","quantidade 5":"","vendedor 5":"","quantidadeSolicitada":"255","quantidadeRepassada":"140","status":"Concluído Parcialmente","usuarioComercial":"usuariodocemel@gmail.com"}
+[Supabase] Mapeando campo 'id' para 'id'
+[Supabase] Definindo 'id' = "S-REP.0000008"
+[Supabase] Mapeando campo 'dataRepasse' para 'dataRepasse'
+[Supabase] Definindo 'dataRepasse' = "2025-08-23"
+[Supabase] Mapeando campo 'usuarioOperacoes' para 'usuarioOperacoes'
+[Supabase] Definindo 'usuarioOperacoes' = "usuariodocemel@gmail.com"
+[Supabase] Mapeando campo 'produto' para 'produto'
+[Supabase] Definindo 'produto' = "032.007 - Limao Siciliano Imp Eleg Cal 2 Cx 15kg"
+[Supabase] Mapeando campo 'familia' para 'familia'
+[Supabase] Definindo 'familia' = "Limao"
+[Supabase] Mapeando campo 'motivo' para 'motivo'
+[Supabase] Definindo 'motivo' = "Tempo De Estoque"
+[Supabase] Mapeando campo 'dataRecebimento' para 'dataRecebimento'
+[Supabase] Definindo 'dataRecebimento' = "2025-07-09"
+[Supabase] Mapeando campo 'tempo(dias)' para 'tempo(dias)'
+[Supabase] Definindo 'tempo(dias)' = "45"
+[Supabase] Mapeando campo 'observacao' para 'observacao'
+[Supabase] Definindo 'observacao' = ""
+[Supabase] Mapeando campo 'quantidade 1' para 'quantidade 1'
+[Supabase] Definindo 'quantidade 1' = "255"
+[Supabase] Mapeando campo 'vendedor 1' para 'vendedor 1'
+[Supabase] Definindo 'vendedor 1' = "Ricardo"
+[Supabase] Mapeando campo 'quantidade 2' para 'quantidade 2'
+[Supabase] Campo numérico 'quantidade 2' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 2' para 'vendedor 2'
+[Supabase] Definindo 'vendedor 2' = ""
+[Supabase] Mapeando campo 'quantidade 3' para 'quantidade 3'
+[Supabase] Campo numérico 'quantidade 3' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 3' para 'vendedor 3'
+[Supabase] Definindo 'vendedor 3' = ""
+[Supabase] Mapeando campo 'quantidade 4' para 'quantidade 4'
+[Supabase] Campo numérico 'quantidade 4' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 4' para 'vendedor 4'
+[Supabase] Definindo 'vendedor 4' = ""
+[Supabase] Mapeando campo 'quantidade 5' para 'quantidade 5'
+[Supabase] Campo numérico 'quantidade 5' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 5' para 'vendedor 5'
+[Supabase] Definindo 'vendedor 5' = ""
+[Supabase] Mapeando campo 'quantidadeSolicitada' para 'quantidadeSolicitada'
+[Supabase] Definindo 'quantidadeSolicitada' = "255"
+[Supabase] Mapeando campo 'quantidadeRepassada' para 'quantidadeRepassada'
+[Supabase] Definindo 'quantidadeRepassada' = "140"
+[Supabase] Mapeando campo 'status' para 'status'
+[Supabase] Definindo 'status' = "Concluído Parcialmente"
+[Supabase] Mapeando campo 'usuarioComercial' para 'usuarioComercial'
+[Supabase] Definindo 'usuarioComercial' = "usuariodocemel@gmail.com"
+[Supabase] Dados normalizados para atualização: {
+  id: 'S-REP.0000008',
+  dataRepasse: '2025-08-23',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '032.007 - Limao Siciliano Imp Eleg Cal 2 Cx 15kg',
+  familia: 'Limao',
+  motivo: 'Tempo De Estoque',
+  dataRecebimento: '2025-07-09',
+  'tempo(dias)': '45',
+  observacao: '',
+  'quantidade 1': '255',
+  'vendedor 1': 'Ricardo',
+  'quantidade 2': null,
+  'vendedor 2': '',
+  'quantidade 3': null,
+  'vendedor 3': '',
+  'quantidade 4': null,
+  'vendedor 4': '',
+  'quantidade 5': null,
+  'vendedor 5': '',
+  quantidadeSolicitada: '255',
+  quantidadeRepassada: '140',
+  status: 'Concluído Parcialmente',
+  usuarioComercial: 'usuariodocemel@gmail.com'
+}
+[Supabase] Enviando dados para atualização: {"id":"S-REP.0000008","dataRepasse":"2025-08-23","usuarioOperacoes":"usuariodocemel@gmail.com","produto":"032.007 - Limao Siciliano Imp Eleg Cal 2 Cx 15kg","familia":"Limao","motivo":"Tempo De Estoque","dataRecebimento":"2025-07-09","tempo(dias)":"45","observacao":"","quantidade 1":"255","vendedor 1":"Ricardo","quantidade 2":null,"vendedor 2":"","quantidade 3":null,"vendedor 3":"","quantidade 4":null,"vendedor 4":"","quantidade 5":null,"vendedor 5":"","quantidadeSolicitada":"255","quantidadeRepassada":"140","status":"Concluído Parcialmente","usuarioComercial":"usuariodocemel@gmail.com"}
+[Supabase] Executando query de atualização para ID S-REP.0000008
+[Supabase] Resultado da query: {
+  data: [
+    {
+      id: 'S-REP.0000008',
+      dataRepasse: '2025-08-23',
+      usuarioOperacoes: 'usuariodocemel@gmail.com',
+      produto: '032.007 - Limao Siciliano Imp Eleg Cal 2 Cx 15kg',
+      familia: 'Limao',
+      motivo: 'Tempo De Estoque',
+      dataRecebimento: '2025-07-09',
+      'tempo(dias)': 45,
+      observacao: '',
+      'vendedor 1': 'Ricardo',
+      quantidadeSolicitada: 255,
+      quantidadeRepassada: 140,
+      status: 'Concluído Parcialmente',
+      usuarioComercial: 'usuariodocemel@gmail.com',
+      'quantidade 2': null,
+      'quantidade 1': 255,
+      'quantidade 3': null,
+      'quantidade 4': null,
+      'quantidade 5': null,
+      'vendedor 3': '',
+      'vendedor 2': '',
+      'vendedor 4': '',
+      'vendedor 5': ''
+    }
+  ],
+  error: null
+}
+[Supabase] Registro atualizado com sucesso: {
+  id: 'S-REP.0000008',
+  dataRepasse: '2025-08-23',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '032.007 - Limao Siciliano Imp Eleg Cal 2 Cx 15kg',
+  familia: 'Limao',
+  motivo: 'Tempo De Estoque',
+  dataRecebimento: '2025-07-09',
+  'tempo(dias)': 45,
+  observacao: '',
+  'vendedor 1': 'Ricardo',
+  quantidadeSolicitada: 255,
+  quantidadeRepassada: 140,
+  status: 'Concluído Parcialmente',
+  usuarioComercial: 'usuariodocemel@gmail.com',
+  'quantidade 2': null,
+  'quantidade 1': 255,
+  'quantidade 3': null,
+  'quantidade 4': null,
+  'quantidade 5': null,
+  'vendedor 3': '',
+  'vendedor 2': '',
+  'vendedor 4': '',
+  'vendedor 5': ''
+}
+[Supabase] Tentando atualizar registro com ID: S-REP.0000078
+[Supabase] Dados recebidos para atualização: {
+  id: 'S-REP.0000078',
+  dataRepasse: '2025-08-24',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '007.010 - Avocado Cat 2 Granel Cx 10kg',
+  familia: 'Abacate',
+  motivo: 'Baixa Qualidade',
+  dataRecebimento: '2025-08-08',
+  'tempo(dias)': '16',
+  observacao: 'teste',
+  'quantidade 1': '50',
+  'vendedor 1': 'Nixon',
+  'quantidade 2': '',
+  'vendedor 2': '',
+  'quantidade 3': '',
+  'vendedor 3': '',
+  'quantidade 4': '',
+  'vendedor 4': '',
+  'quantidade 5': '',
+  'vendedor 5': '',
+  quantidadeSolicitada: '50',
+  quantidadeRepassada: '',
+  status: 'Iniciado',
+  usuarioComercial: 'usuariodocemel@gmail.com'
+}
+[Supabase] Normalizando dados: {"id":"S-REP.0000078","dataRepasse":"2025-08-24","usuarioOperacoes":"usuariodocemel@gmail.com","produto":"007.010 - Avocado Cat 2 Granel Cx 10kg","familia":"Abacate","motivo":"Baixa Qualidade","dataRecebimento":"2025-08-08","tempo(dias)":"16","observacao":"teste","quantidade 1":"50","vendedor 1":"Nixon","quantidade 2":"","vendedor 2":"","quantidade 3":"","vendedor 3":"","quantidade 4":"","vendedor 4":"","quantidade 5":"","vendedor 5":"","quantidadeSolicitada":"50","quantidadeRepassada":"","status":"Iniciado","usuarioComercial":"usuariodocemel@gmail.com"}
+[Supabase] Mapeando campo 'id' para 'id'
+[Supabase] Definindo 'id' = "S-REP.0000078"
+[Supabase] Mapeando campo 'dataRepasse' para 'dataRepasse'
+[Supabase] Definindo 'dataRepasse' = "2025-08-24"
+[Supabase] Mapeando campo 'usuarioOperacoes' para 'usuarioOperacoes'
+[Supabase] Definindo 'usuarioOperacoes' = "usuariodocemel@gmail.com"
+[Supabase] Mapeando campo 'produto' para 'produto'
+[Supabase] Definindo 'produto' = "007.010 - Avocado Cat 2 Granel Cx 10kg"
+[Supabase] Mapeando campo 'familia' para 'familia'
+[Supabase] Definindo 'familia' = "Abacate"
+[Supabase] Mapeando campo 'motivo' para 'motivo'
+[Supabase] Definindo 'motivo' = "Baixa Qualidade"
+[Supabase] Mapeando campo 'dataRecebimento' para 'dataRecebimento'
+[Supabase] Definindo 'dataRecebimento' = "2025-08-08"
+[Supabase] Mapeando campo 'tempo(dias)' para 'tempo(dias)'
+[Supabase] Definindo 'tempo(dias)' = "16"
+[Supabase] Mapeando campo 'observacao' para 'observacao'
+[Supabase] Definindo 'observacao' = "teste"
+[Supabase] Mapeando campo 'quantidade 1' para 'quantidade 1'
+[Supabase] Definindo 'quantidade 1' = "50"
+[Supabase] Mapeando campo 'vendedor 1' para 'vendedor 1'
+[Supabase] Definindo 'vendedor 1' = "Nixon"
+[Supabase] Mapeando campo 'quantidade 2' para 'quantidade 2'
+[Supabase] Campo numérico 'quantidade 2' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 2' para 'vendedor 2'
+[Supabase] Definindo 'vendedor 2' = ""
+[Supabase] Mapeando campo 'quantidade 3' para 'quantidade 3'
+[Supabase] Campo numérico 'quantidade 3' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 3' para 'vendedor 3'
+[Supabase] Definindo 'vendedor 3' = ""
+[Supabase] Mapeando campo 'quantidade 4' para 'quantidade 4'
+[Supabase] Campo numérico 'quantidade 4' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 4' para 'vendedor 4'
+[Supabase] Definindo 'vendedor 4' = ""
+[Supabase] Mapeando campo 'quantidade 5' para 'quantidade 5'
+[Supabase] Campo numérico 'quantidade 5' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 5' para 'vendedor 5'
+[Supabase] Definindo 'vendedor 5' = ""
+[Supabase] Mapeando campo 'quantidadeSolicitada' para 'quantidadeSolicitada'
+[Supabase] Definindo 'quantidadeSolicitada' = "50"
+[Supabase] Mapeando campo 'quantidadeRepassada' para 'quantidadeRepassada'
+[Supabase] Campo numérico 'quantidadeRepassada' vazio, definindo como null
+[Supabase] Mapeando campo 'status' para 'status'
+[Supabase] Definindo 'status' = "Iniciado"
+[Supabase] Mapeando campo 'usuarioComercial' para 'usuarioComercial'
+[Supabase] Definindo 'usuarioComercial' = "usuariodocemel@gmail.com"
+[Supabase] Dados normalizados para atualização: {
+  id: 'S-REP.0000078',
+  dataRepasse: '2025-08-24',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '007.010 - Avocado Cat 2 Granel Cx 10kg',
+  familia: 'Abacate',
+  motivo: 'Baixa Qualidade',
+  dataRecebimento: '2025-08-08',
+  'tempo(dias)': '16',
+  observacao: 'teste',
+  'quantidade 1': '50',
+  'vendedor 1': 'Nixon',
+  'quantidade 2': null,
+  'vendedor 2': '',
+  'quantidade 3': null,
+  'vendedor 3': '',
+  'quantidade 4': null,
+  'vendedor 4': '',
+  'quantidade 5': null,
+  'vendedor 5': '',
+  quantidadeSolicitada: '50',
+  quantidadeRepassada: null,
+  status: 'Iniciado',
+  usuarioComercial: 'usuariodocemel@gmail.com'
+}
+[Supabase] Enviando dados para atualização: {"id":"S-REP.0000078","dataRepasse":"2025-08-24","usuarioOperacoes":"usuariodocemel@gmail.com","produto":"007.010 - Avocado Cat 2 Granel Cx 10kg","familia":"Abacate","motivo":"Baixa Qualidade","dataRecebimento":"2025-08-08","tempo(dias)":"16","observacao":"teste","quantidade 1":"50","vendedor 1":"Nixon","quantidade 2":null,"vendedor 2":"","quantidade 3":null,"vendedor 3":"","quantidade 4":null,"vendedor 4":"","quantidade 5":null,"vendedor 5":"","quantidadeSolicitada":"50","quantidadeRepassada":null,"status":"Iniciado","usuarioComercial":"usuariodocemel@gmail.com"}
+[Supabase] Executando query de atualização para ID S-REP.0000078
+[Supabase] Resultado da query: {
+  data: [
+    {
+      id: 'S-REP.0000078',
+      dataRepasse: '2025-08-24',
+      usuarioOperacoes: 'usuariodocemel@gmail.com',
+      produto: '007.010 - Avocado Cat 2 Granel Cx 10kg',
+      familia: 'Abacate',
+      motivo: 'Baixa Qualidade',
+      dataRecebimento: '2025-08-08',
+      'tempo(dias)': 16,
+      observacao: 'teste',
+      'vendedor 1': 'Nixon',
+      quantidadeSolicitada: 50,
+      quantidadeRepassada: null,
+      status: 'Iniciado',
+      usuarioComercial: 'usuariodocemel@gmail.com',
+      'quantidade 2': null,
+      'quantidade 1': 50,
+      'quantidade 3': null,
+      'quantidade 4': null,
+      'quantidade 5': null,
+      'vendedor 3': '',
+      'vendedor 2': '',
+      'vendedor 4': '',
+      'vendedor 5': ''
+    }
+  ],
+  error: null
+}
+[Supabase] Registro atualizado com sucesso: {
+  id: 'S-REP.0000078',
+  dataRepasse: '2025-08-24',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '007.010 - Avocado Cat 2 Granel Cx 10kg',
+  familia: 'Abacate',
+  motivo: 'Baixa Qualidade',
+  dataRecebimento: '2025-08-08',
+  'tempo(dias)': 16,
+  observacao: 'teste',
+  'vendedor 1': 'Nixon',
+  quantidadeSolicitada: 50,
+  quantidadeRepassada: null,
+  status: 'Iniciado',
+  usuarioComercial: 'usuariodocemel@gmail.com',
+  'quantidade 2': null,
+  'quantidade 1': 50,
+  'quantidade 3': null,
+  'quantidade 4': null,
+  'quantidade 5': null,
+  'vendedor 3': '',
+  'vendedor 2': '',
+  'vendedor 4': '',
+  'vendedor 5': ''
+}
+[Supabase] Tentando atualizar registro com ID: S-REP.0000079
+[Supabase] Dados recebidos para atualização: {
+  id: 'S-REP.0000079',
+  dataRepasse: '2025-08-24',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '041.009 - Kiwi Hayward Imp Com Cal 25-27 Cx 10kg',
+  familia: 'Kiwi',
+  motivo: 'Podridao E Morfo',
+  dataRecebimento: '2025-08-03',
+  'tempo(dias)': '21',
+  observacao: '',
+  'quantidade 1': '',
+  'vendedor 1': '',
+  'quantidade 2': '',
+  'vendedor 2': '',
+  'quantidade 3': '',
+  'vendedor 3': '',
+  'quantidade 4': '',
+  'vendedor 4': '',
+  'quantidade 5': '',
+  'vendedor 5': '',
+  quantidadeSolicitada: '',
+  quantidadeRepassada: '',
+  status: 'Pendente',
+  usuarioComercial: undefined
+}
+[Supabase] Normalizando dados: {"id":"S-REP.0000079","dataRepasse":"2025-08-24","usuarioOperacoes":"usuariodocemel@gmail.com","produto":"041.009 - Kiwi Hayward Imp Com Cal 25-27 Cx 10kg","familia":"Kiwi","motivo":"Podridao E Morfo","dataRecebimento":"2025-08-03","tempo(dias)":"21","observacao":"","quantidade 1":"","vendedor 1":"","quantidade 2":"","vendedor 2":"","quantidade 3":"","vendedor 3":"","quantidade 4":"","vendedor 4":"","quantidade 5":"","vendedor 5":"","quantidadeSolicitada":"","quantidadeRepassada":"","status":"Pendente"}
+[Supabase] Mapeando campo 'id' para 'id'
+[Supabase] Definindo 'id' = "S-REP.0000079"
+[Supabase] Mapeando campo 'dataRepasse' para 'dataRepasse'
+[Supabase] Definindo 'dataRepasse' = "2025-08-24"
+[Supabase] Mapeando campo 'usuarioOperacoes' para 'usuarioOperacoes'
+[Supabase] Definindo 'usuarioOperacoes' = "usuariodocemel@gmail.com"
+[Supabase] Mapeando campo 'produto' para 'produto'
+[Supabase] Definindo 'produto' = "041.009 - Kiwi Hayward Imp Com Cal 25-27 Cx 10kg"
+[Supabase] Mapeando campo 'familia' para 'familia'
+[Supabase] Definindo 'familia' = "Kiwi"
+[Supabase] Mapeando campo 'motivo' para 'motivo'
+[Supabase] Definindo 'motivo' = "Podridao E Morfo"
+[Supabase] Mapeando campo 'dataRecebimento' para 'dataRecebimento'
+[Supabase] Definindo 'dataRecebimento' = "2025-08-03"
+[Supabase] Mapeando campo 'tempo(dias)' para 'tempo(dias)'
+[Supabase] Definindo 'tempo(dias)' = "21"
+[Supabase] Mapeando campo 'observacao' para 'observacao'
+[Supabase] Definindo 'observacao' = ""
+[Supabase] Mapeando campo 'quantidade 1' para 'quantidade 1'
+[Supabase] Campo numérico 'quantidade 1' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 1' para 'vendedor 1'
+[Supabase] Definindo 'vendedor 1' = ""
+[Supabase] Mapeando campo 'quantidade 2' para 'quantidade 2'
+[Supabase] Campo numérico 'quantidade 2' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 2' para 'vendedor 2'
+[Supabase] Definindo 'vendedor 2' = ""
+[Supabase] Mapeando campo 'quantidade 3' para 'quantidade 3'
+[Supabase] Campo numérico 'quantidade 3' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 3' para 'vendedor 3'
+[Supabase] Definindo 'vendedor 3' = ""
+[Supabase] Mapeando campo 'quantidade 4' para 'quantidade 4'
+[Supabase] Campo numérico 'quantidade 4' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 4' para 'vendedor 4'
+[Supabase] Definindo 'vendedor 4' = ""
+[Supabase] Mapeando campo 'quantidade 5' para 'quantidade 5'
+[Supabase] Campo numérico 'quantidade 5' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 5' para 'vendedor 5'
+[Supabase] Definindo 'vendedor 5' = ""
+[Supabase] Mapeando campo 'quantidadeSolicitada' para 'quantidadeSolicitada'
+[Supabase] Campo numérico 'quantidadeSolicitada' vazio, definindo como null
+[Supabase] Mapeando campo 'quantidadeRepassada' para 'quantidadeRepassada'
+[Supabase] Campo numérico 'quantidadeRepassada' vazio, definindo como null
+[Supabase] Mapeando campo 'status' para 'status'
+[Supabase] Definindo 'status' = "Pendente"
+[Supabase] Mapeando campo 'usuarioComercial' para 'usuarioComercial'
+[Supabase] Dados normalizados para atualização: {
+  id: 'S-REP.0000079',
+  dataRepasse: '2025-08-24',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '041.009 - Kiwi Hayward Imp Com Cal 25-27 Cx 10kg',
+  familia: 'Kiwi',
+  motivo: 'Podridao E Morfo',
+  dataRecebimento: '2025-08-03',
+  'tempo(dias)': '21',
+  observacao: '',
+  'quantidade 1': null,
+  'vendedor 1': '',
+  'quantidade 2': null,
+  'vendedor 2': '',
+  'quantidade 3': null,
+  'vendedor 3': '',
+  'quantidade 4': null,
+  'vendedor 4': '',
+  'quantidade 5': null,
+  'vendedor 5': '',
+  quantidadeSolicitada: null,
+  quantidadeRepassada: null,
+  status: 'Pendente'
+}
+[Supabase] Enviando dados para atualização: {"id":"S-REP.0000079","dataRepasse":"2025-08-24","usuarioOperacoes":"usuariodocemel@gmail.com","produto":"041.009 - Kiwi Hayward Imp Com Cal 25-27 Cx 10kg","familia":"Kiwi","motivo":"Podridao E Morfo","dataRecebimento":"2025-08-03","tempo(dias)":"21","observacao":"","quantidade 1":null,"vendedor 1":"","quantidade 2":null,"vendedor 2":"","quantidade 3":null,"vendedor 3":"","quantidade 4":null,"vendedor 4":"","quantidade 5":null,"vendedor 5":"","quantidadeSolicitada":null,"quantidadeRepassada":null,"status":"Pendente"}
+[Supabase] Executando query de atualização para ID S-REP.0000079
+[Supabase] Resultado da query: {
+  data: [
+    {
+      id: 'S-REP.0000079',
+      dataRepasse: '2025-08-24',
+      usuarioOperacoes: 'usuariodocemel@gmail.com',
+      produto: '041.009 - Kiwi Hayward Imp Com Cal 25-27 Cx 10kg',
+      familia: 'Kiwi',
+      motivo: 'Podridao E Morfo',
+      dataRecebimento: '2025-08-03',
+      'tempo(dias)': 21,
+      observacao: '',
+      'vendedor 1': '',
+      quantidadeSolicitada: null,
+      quantidadeRepassada: null,
+      status: 'Pendente',
+      usuarioComercial: null,
+      'quantidade 2': null,
+      'quantidade 1': null,
+      'quantidade 3': null,
+      'quantidade 4': null,
+      'quantidade 5': null,
+      'vendedor 3': '',
+      'vendedor 2': '',
+      'vendedor 4': '',
+      'vendedor 5': ''
+    }
+  ],
+  error: null
+}
+[Supabase] Registro atualizado com sucesso: {
+  id: 'S-REP.0000079',
+  dataRepasse: '2025-08-24',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '041.009 - Kiwi Hayward Imp Com Cal 25-27 Cx 10kg',
+  familia: 'Kiwi',
+  motivo: 'Podridao E Morfo',
+  dataRecebimento: '2025-08-03',
+  'tempo(dias)': 21,
+  observacao: '',
+  'vendedor 1': '',
+  quantidadeSolicitada: null,
+  quantidadeRepassada: null,
+  status: 'Pendente',
+  usuarioComercial: null,
+  'quantidade 2': null,
+  'quantidade 1': null,
+  'quantidade 3': null,
+  'quantidade 4': null,
+  'quantidade 5': null,
+  'vendedor 3': '',
+  'vendedor 2': '',
+  'vendedor 4': '',
+  'vendedor 5': ''
+}
+[Supabase] Tentando atualizar registro com ID: S-REP.0000080
+[Supabase] Dados recebidos para atualização: {
+  id: 'S-REP.0000080',
+  dataRepasse: '2025-08-24',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '032.007 - Limao Siciliano Imp Eleg Cal 2 Cx 15kg',
+  familia: 'Limao',
+  motivo: 'Tempo De Estoque',
+  dataRecebimento: '2025-07-09',
+  'tempo(dias)': '46',
+  observacao: '',
+  'quantidade 1': '',
+  'vendedor 1': '',
+  'quantidade 2': '',
+  'vendedor 2': '',
+  'quantidade 3': '',
+  'vendedor 3': '',
+  'quantidade 4': '',
+  'vendedor 4': '',
+  'quantidade 5': '',
+  'vendedor 5': '',
+  quantidadeSolicitada: '',
+  quantidadeRepassada: '',
+  status: 'Pendente',
+  usuarioComercial: undefined
+}
+[Supabase] Normalizando dados: {"id":"S-REP.0000080","dataRepasse":"2025-08-24","usuarioOperacoes":"usuariodocemel@gmail.com","produto":"032.007 - Limao Siciliano Imp Eleg Cal 2 Cx 15kg","familia":"Limao","motivo":"Tempo De Estoque","dataRecebimento":"2025-07-09","tempo(dias)":"46","observacao":"","quantidade 1":"","vendedor 1":"","quantidade 2":"","vendedor 2":"","quantidade 3":"","vendedor 3":"","quantidade 4":"","vendedor 4":"","quantidade 5":"","vendedor 5":"","quantidadeSolicitada":"","quantidadeRepassada":"","status":"Pendente"}
+[Supabase] Mapeando campo 'id' para 'id'
+[Supabase] Definindo 'id' = "S-REP.0000080"
+[Supabase] Mapeando campo 'dataRepasse' para 'dataRepasse'
+[Supabase] Definindo 'dataRepasse' = "2025-08-24"
+[Supabase] Mapeando campo 'usuarioOperacoes' para 'usuarioOperacoes'
+[Supabase] Definindo 'usuarioOperacoes' = "usuariodocemel@gmail.com"
+[Supabase] Mapeando campo 'produto' para 'produto'
+[Supabase] Definindo 'produto' = "032.007 - Limao Siciliano Imp Eleg Cal 2 Cx 15kg"
+[Supabase] Mapeando campo 'familia' para 'familia'
+[Supabase] Definindo 'familia' = "Limao"
+[Supabase] Mapeando campo 'motivo' para 'motivo'
+[Supabase] Definindo 'motivo' = "Tempo De Estoque"
+[Supabase] Mapeando campo 'dataRecebimento' para 'dataRecebimento'
+[Supabase] Definindo 'dataRecebimento' = "2025-07-09"
+[Supabase] Mapeando campo 'tempo(dias)' para 'tempo(dias)'
+[Supabase] Definindo 'tempo(dias)' = "46"
+[Supabase] Mapeando campo 'observacao' para 'observacao'
+[Supabase] Definindo 'observacao' = ""
+[Supabase] Mapeando campo 'quantidade 1' para 'quantidade 1'
+[Supabase] Campo numérico 'quantidade 1' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 1' para 'vendedor 1'
+[Supabase] Definindo 'vendedor 1' = ""
+[Supabase] Mapeando campo 'quantidade 2' para 'quantidade 2'
+[Supabase] Campo numérico 'quantidade 2' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 2' para 'vendedor 2'
+[Supabase] Definindo 'vendedor 2' = ""
+[Supabase] Mapeando campo 'quantidade 3' para 'quantidade 3'
+[Supabase] Campo numérico 'quantidade 3' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 3' para 'vendedor 3'
+[Supabase] Definindo 'vendedor 3' = ""
+[Supabase] Mapeando campo 'quantidade 4' para 'quantidade 4'
+[Supabase] Campo numérico 'quantidade 4' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 4' para 'vendedor 4'
+[Supabase] Definindo 'vendedor 4' = ""
+[Supabase] Mapeando campo 'quantidade 5' para 'quantidade 5'
+[Supabase] Campo numérico 'quantidade 5' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 5' para 'vendedor 5'
+[Supabase] Definindo 'vendedor 5' = ""
+[Supabase] Mapeando campo 'quantidadeSolicitada' para 'quantidadeSolicitada'
+[Supabase] Campo numérico 'quantidadeSolicitada' vazio, definindo como null
+[Supabase] Mapeando campo 'quantidadeRepassada' para 'quantidadeRepassada'
+[Supabase] Campo numérico 'quantidadeRepassada' vazio, definindo como null
+[Supabase] Mapeando campo 'status' para 'status'
+[Supabase] Definindo 'status' = "Pendente"
+[Supabase] Mapeando campo 'usuarioComercial' para 'usuarioComercial'
+[Supabase] Dados normalizados para atualização: {
+  id: 'S-REP.0000080',
+  dataRepasse: '2025-08-24',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '032.007 - Limao Siciliano Imp Eleg Cal 2 Cx 15kg',
+  familia: 'Limao',
+  motivo: 'Tempo De Estoque',
+  dataRecebimento: '2025-07-09',
+  'tempo(dias)': '46',
+  observacao: '',
+  'quantidade 1': null,
+  'vendedor 1': '',
+  'quantidade 2': null,
+  'vendedor 2': '',
+  'quantidade 3': null,
+  'vendedor 3': '',
+  'quantidade 4': null,
+  'vendedor 4': '',
+  'quantidade 5': null,
+  'vendedor 5': '',
+  quantidadeSolicitada: null,
+  quantidadeRepassada: null,
+  status: 'Pendente'
+}
+[Supabase] Enviando dados para atualização: {"id":"S-REP.0000080","dataRepasse":"2025-08-24","usuarioOperacoes":"usuariodocemel@gmail.com","produto":"032.007 - Limao Siciliano Imp Eleg Cal 2 Cx 15kg","familia":"Limao","motivo":"Tempo De Estoque","dataRecebimento":"2025-07-09","tempo(dias)":"46","observacao":"","quantidade 1":null,"vendedor 1":"","quantidade 2":null,"vendedor 2":"","quantidade 3":null,"vendedor 3":"","quantidade 4":null,"vendedor 4":"","quantidade 5":null,"vendedor 5":"","quantidadeSolicitada":null,"quantidadeRepassada":null,"status":"Pendente"}
+[Supabase] Executando query de atualização para ID S-REP.0000080
+[Supabase] Resultado da query: {
+  data: [
+    {
+      id: 'S-REP.0000080',
+      dataRepasse: '2025-08-24',
+      usuarioOperacoes: 'usuariodocemel@gmail.com',
+      produto: '032.007 - Limao Siciliano Imp Eleg Cal 2 Cx 15kg',
+      familia: 'Limao',
+      motivo: 'Tempo De Estoque',
+      dataRecebimento: '2025-07-09',
+      'tempo(dias)': 46,
+      observacao: '',
+      'vendedor 1': '',
+      quantidadeSolicitada: null,
+      quantidadeRepassada: null,
+      status: 'Pendente',
+      usuarioComercial: null,
+      'quantidade 2': null,
+      'quantidade 1': null,
+      'quantidade 3': null,
+      'quantidade 4': null,
+      'quantidade 5': null,
+      'vendedor 3': '',
+      'vendedor 2': '',
+      'vendedor 4': '',
+      'vendedor 5': ''
+    }
+  ],
+  error: null
+}
+[Supabase] Registro atualizado com sucesso: {
+  id: 'S-REP.0000080',
+  dataRepasse: '2025-08-24',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '032.007 - Limao Siciliano Imp Eleg Cal 2 Cx 15kg',
+  familia: 'Limao',
+  motivo: 'Tempo De Estoque',
+  dataRecebimento: '2025-07-09',
+  'tempo(dias)': 46,
+  observacao: '',
+  'vendedor 1': '',
+  quantidadeSolicitada: null,
+  quantidadeRepassada: null,
+  status: 'Pendente',
+  usuarioComercial: null,
+  'quantidade 2': null,
+  'quantidade 1': null,
+  'quantidade 3': null,
+  'quantidade 4': null,
+  'quantidade 5': null,
+  'vendedor 3': '',
+  'vendedor 2': '',
+  'vendedor 4': '',
+  'vendedor 5': ''
+}
+[Supabase] Tentando atualizar registro com ID: S-REP.0000081
+[Supabase] Dados recebidos para atualização: {
+  id: 'S-REP.0000081',
+  dataRepasse: '2025-08-24',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '042.026 - Pera Portuguesa Imp Eleg Cal 50-55 Cx 10kg',
+  familia: 'Pera',
+  motivo: 'Colar Etiqueta e/ou Cinta',
+  dataRecebimento: '2025-08-14',
+  'tempo(dias)': '10',
+  observacao: 'teste',
+  'quantidade 1': '1',
+  'vendedor 1': 'Nixon',
+  'quantidade 2': '55',
+  'vendedor 2': 'Antonio',
+  'quantidade 3': '',
+  'vendedor 3': '',
+  'quantidade 4': '',
+  'vendedor 4': '',
+  'quantidade 5': '',
+  'vendedor 5': '',
+  quantidadeSolicitada: '56',
+  quantidadeRepassada: '',
+  status: 'Pendente',
+  usuarioComercial: 'usuariodocemel@gmail.com'
+}
+[Supabase] Normalizando dados: {"id":"S-REP.0000081","dataRepasse":"2025-08-24","usuarioOperacoes":"usuariodocemel@gmail.com","produto":"042.026 - Pera Portuguesa Imp Eleg Cal 50-55 Cx 10kg","familia":"Pera","motivo":"Colar Etiqueta e/ou Cinta","dataRecebimento":"2025-08-14","tempo(dias)":"10","observacao":"teste","quantidade 1":"1","vendedor 1":"Nixon","quantidade 2":"55","vendedor 2":"Antonio","quantidade 3":"","vendedor 3":"","quantidade 4":"","vendedor 4":"","quantidade 5":"","vendedor 5":"","quantidadeSolicitada":"56","quantidadeRepassada":"","status":"Pendente","usuarioComercial":"usuariodocemel@gmail.com"}
+[Supabase] Mapeando campo 'id' para 'id'
+[Supabase] Definindo 'id' = "S-REP.0000081"
+[Supabase] Mapeando campo 'dataRepasse' para 'dataRepasse'
+[Supabase] Definindo 'dataRepasse' = "2025-08-24"
+[Supabase] Mapeando campo 'usuarioOperacoes' para 'usuarioOperacoes'
+[Supabase] Definindo 'usuarioOperacoes' = "usuariodocemel@gmail.com"
+[Supabase] Mapeando campo 'produto' para 'produto'
+[Supabase] Definindo 'produto' = "042.026 - Pera Portuguesa Imp Eleg Cal 50-55 Cx 10kg"
+[Supabase] Mapeando campo 'familia' para 'familia'
+[Supabase] Definindo 'familia' = "Pera"
+[Supabase] Mapeando campo 'motivo' para 'motivo'
+[Supabase] Definindo 'motivo' = "Colar Etiqueta e/ou Cinta"
+[Supabase] Mapeando campo 'dataRecebimento' para 'dataRecebimento'
+[Supabase] Definindo 'dataRecebimento' = "2025-08-14"
+[Supabase] Mapeando campo 'tempo(dias)' para 'tempo(dias)'
+[Supabase] Definindo 'tempo(dias)' = "10"
+[Supabase] Mapeando campo 'observacao' para 'observacao'
+[Supabase] Definindo 'observacao' = "teste"
+[Supabase] Mapeando campo 'quantidade 1' para 'quantidade 1'
+[Supabase] Definindo 'quantidade 1' = "1"
+[Supabase] Mapeando campo 'vendedor 1' para 'vendedor 1'
+[Supabase] Definindo 'vendedor 1' = "Nixon"
+[Supabase] Mapeando campo 'quantidade 2' para 'quantidade 2'
+[Supabase] Definindo 'quantidade 2' = "55"
+[Supabase] Mapeando campo 'vendedor 2' para 'vendedor 2'
+[Supabase] Definindo 'vendedor 2' = "Antonio"
+[Supabase] Mapeando campo 'quantidade 3' para 'quantidade 3'
+[Supabase] Campo numérico 'quantidade 3' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 3' para 'vendedor 3'
+[Supabase] Definindo 'vendedor 3' = ""
+[Supabase] Mapeando campo 'quantidade 4' para 'quantidade 4'
+[Supabase] Campo numérico 'quantidade 4' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 4' para 'vendedor 4'
+[Supabase] Definindo 'vendedor 4' = ""
+[Supabase] Mapeando campo 'quantidade 5' para 'quantidade 5'
+[Supabase] Campo numérico 'quantidade 5' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 5' para 'vendedor 5'
+[Supabase] Definindo 'vendedor 5' = ""
+[Supabase] Mapeando campo 'quantidadeSolicitada' para 'quantidadeSolicitada'
+[Supabase] Definindo 'quantidadeSolicitada' = "56"
+[Supabase] Mapeando campo 'quantidadeRepassada' para 'quantidadeRepassada'
+[Supabase] Campo numérico 'quantidadeRepassada' vazio, definindo como null
+[Supabase] Mapeando campo 'status' para 'status'
+[Supabase] Definindo 'status' = "Pendente"
+[Supabase] Mapeando campo 'usuarioComercial' para 'usuarioComercial'
+[Supabase] Definindo 'usuarioComercial' = "usuariodocemel@gmail.com"
+[Supabase] Dados normalizados para atualização: {
+  id: 'S-REP.0000081',
+  dataRepasse: '2025-08-24',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '042.026 - Pera Portuguesa Imp Eleg Cal 50-55 Cx 10kg',
+  familia: 'Pera',
+  motivo: 'Colar Etiqueta e/ou Cinta',
+  dataRecebimento: '2025-08-14',
+  'tempo(dias)': '10',
+  observacao: 'teste',
+  'quantidade 1': '1',
+  'vendedor 1': 'Nixon',
+  'quantidade 2': '55',
+  'vendedor 2': 'Antonio',
+  'quantidade 3': null,
+  'vendedor 3': '',
+  'quantidade 4': null,
+  'vendedor 4': '',
+  'quantidade 5': null,
+  'vendedor 5': '',
+  quantidadeSolicitada: '56',
+  quantidadeRepassada: null,
+  status: 'Pendente',
+  usuarioComercial: 'usuariodocemel@gmail.com'
+}
+[Supabase] Enviando dados para atualização: {"id":"S-REP.0000081","dataRepasse":"2025-08-24","usuarioOperacoes":"usuariodocemel@gmail.com","produto":"042.026 - Pera Portuguesa Imp Eleg Cal 50-55 Cx 10kg","familia":"Pera","motivo":"Colar Etiqueta e/ou Cinta","dataRecebimento":"2025-08-14","tempo(dias)":"10","observacao":"teste","quantidade 1":"1","vendedor 1":"Nixon","quantidade 2":"55","vendedor 2":"Antonio","quantidade 3":null,"vendedor 3":"","quantidade 4":null,"vendedor 4":"","quantidade 5":null,"vendedor 5":"","quantidadeSolicitada":"56","quantidadeRepassada":null,"status":"Pendente","usuarioComercial":"usuariodocemel@gmail.com"}
+[Supabase] Executando query de atualização para ID S-REP.0000081
+[Supabase] Resultado da query: {
+  data: [
+    {
+      id: 'S-REP.0000081',
+      dataRepasse: '2025-08-24',
+      usuarioOperacoes: 'usuariodocemel@gmail.com',
+      produto: '042.026 - Pera Portuguesa Imp Eleg Cal 50-55 Cx 10kg',
+      familia: 'Pera',
+      motivo: 'Colar Etiqueta e/ou Cinta',
+      dataRecebimento: '2025-08-14',
+      'tempo(dias)': 10,
+      observacao: 'teste',
+      'vendedor 1': 'Nixon',
+      quantidadeSolicitada: 56,
+      quantidadeRepassada: null,
+      status: 'Pendente',
+      usuarioComercial: 'usuariodocemel@gmail.com',
+      'quantidade 2': 55,
+      'quantidade 1': 1,
+      'quantidade 3': null,
+      'quantidade 4': null,
+      'quantidade 5': null,
+      'vendedor 3': '',
+      'vendedor 2': 'Antonio',
+      'vendedor 4': '',
+      'vendedor 5': ''
+    }
+  ],
+  error: null
+}
+[Supabase] Registro atualizado com sucesso: {
+  id: 'S-REP.0000081',
+  dataRepasse: '2025-08-24',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '042.026 - Pera Portuguesa Imp Eleg Cal 50-55 Cx 10kg',
+  familia: 'Pera',
+  motivo: 'Colar Etiqueta e/ou Cinta',
+  dataRecebimento: '2025-08-14',
+  'tempo(dias)': 10,
+  observacao: 'teste',
+  'vendedor 1': 'Nixon',
+  quantidadeSolicitada: 56,
+  quantidadeRepassada: null,
+  status: 'Pendente',
+  usuarioComercial: 'usuariodocemel@gmail.com',
+  'quantidade 2': 55,
+  'quantidade 1': 1,
+  'quantidade 3': null,
+  'quantidade 4': null,
+  'quantidade 5': null,
+  'vendedor 3': '',
+  'vendedor 2': 'Antonio',
+  'vendedor 4': '',
+  'vendedor 5': ''
+}
+[Supabase] Tentando atualizar registro com ID: S-REP.0000082
+[Supabase] Dados recebidos para atualização: {
+  id: 'S-REP.0000082',
+  dataRepasse: '2025-08-24',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '007.008 - Abacate Extra Cx Plastica 20 Kg',
+  familia: 'Abacate',
+  motivo: 'Baixa Qualidade',
+  dataRecebimento: '2025-07-27',
+  'tempo(dias)': '28',
+  observacao: '',
+  'quantidade 1': '55',
+  'vendedor 1': 'Vinicius',
+  'quantidade 2': '',
+  'vendedor 2': '',
+  'quantidade 3': '',
+  'vendedor 3': '',
+  'quantidade 4': '',
+  'vendedor 4': '',
+  'quantidade 5': '',
+  'vendedor 5': '',
+  quantidadeSolicitada: '55',
+  quantidadeRepassada: '',
+  status: 'Pendente',
+  usuarioComercial: 'usuariodocemel@gmail.com'
+}
+[Supabase] Normalizando dados: {"id":"S-REP.0000082","dataRepasse":"2025-08-24","usuarioOperacoes":"usuariodocemel@gmail.com","produto":"007.008 - Abacate Extra Cx Plastica 20 Kg","familia":"Abacate","motivo":"Baixa Qualidade","dataRecebimento":"2025-07-27","tempo(dias)":"28","observacao":"","quantidade 1":"55","vendedor 1":"Vinicius","quantidade 2":"","vendedor 2":"","quantidade 3":"","vendedor 3":"","quantidade 4":"","vendedor 4":"","quantidade 5":"","vendedor 5":"","quantidadeSolicitada":"55","quantidadeRepassada":"","status":"Pendente","usuarioComercial":"usuariodocemel@gmail.com"}
+[Supabase] Mapeando campo 'id' para 'id'
+[Supabase] Definindo 'id' = "S-REP.0000082"
+[Supabase] Mapeando campo 'dataRepasse' para 'dataRepasse'
+[Supabase] Definindo 'dataRepasse' = "2025-08-24"
+[Supabase] Mapeando campo 'usuarioOperacoes' para 'usuarioOperacoes'
+[Supabase] Definindo 'usuarioOperacoes' = "usuariodocemel@gmail.com"
+[Supabase] Mapeando campo 'produto' para 'produto'
+[Supabase] Definindo 'produto' = "007.008 - Abacate Extra Cx Plastica 20 Kg"
+[Supabase] Mapeando campo 'familia' para 'familia'
+[Supabase] Definindo 'familia' = "Abacate"
+[Supabase] Mapeando campo 'motivo' para 'motivo'
+[Supabase] Definindo 'motivo' = "Baixa Qualidade"
+[Supabase] Mapeando campo 'dataRecebimento' para 'dataRecebimento'
+[Supabase] Definindo 'dataRecebimento' = "2025-07-27"
+[Supabase] Mapeando campo 'tempo(dias)' para 'tempo(dias)'
+[Supabase] Definindo 'tempo(dias)' = "28"
+[Supabase] Mapeando campo 'observacao' para 'observacao'
+[Supabase] Definindo 'observacao' = ""
+[Supabase] Mapeando campo 'quantidade 1' para 'quantidade 1'
+[Supabase] Definindo 'quantidade 1' = "55"
+[Supabase] Mapeando campo 'vendedor 1' para 'vendedor 1'
+[Supabase] Definindo 'vendedor 1' = "Vinicius"
+[Supabase] Mapeando campo 'quantidade 2' para 'quantidade 2'
+[Supabase] Campo numérico 'quantidade 2' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 2' para 'vendedor 2'
+[Supabase] Definindo 'vendedor 2' = ""
+[Supabase] Mapeando campo 'quantidade 3' para 'quantidade 3'
+[Supabase] Campo numérico 'quantidade 3' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 3' para 'vendedor 3'
+[Supabase] Definindo 'vendedor 3' = ""
+[Supabase] Mapeando campo 'quantidade 4' para 'quantidade 4'
+[Supabase] Campo numérico 'quantidade 4' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 4' para 'vendedor 4'
+[Supabase] Definindo 'vendedor 4' = ""
+[Supabase] Mapeando campo 'quantidade 5' para 'quantidade 5'
+[Supabase] Campo numérico 'quantidade 5' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 5' para 'vendedor 5'
+[Supabase] Definindo 'vendedor 5' = ""
+[Supabase] Mapeando campo 'quantidadeSolicitada' para 'quantidadeSolicitada'
+[Supabase] Definindo 'quantidadeSolicitada' = "55"
+[Supabase] Mapeando campo 'quantidadeRepassada' para 'quantidadeRepassada'
+[Supabase] Campo numérico 'quantidadeRepassada' vazio, definindo como null
+[Supabase] Mapeando campo 'status' para 'status'
+[Supabase] Definindo 'status' = "Pendente"
+[Supabase] Mapeando campo 'usuarioComercial' para 'usuarioComercial'
+[Supabase] Definindo 'usuarioComercial' = "usuariodocemel@gmail.com"
+[Supabase] Dados normalizados para atualização: {
+  id: 'S-REP.0000082',
+  dataRepasse: '2025-08-24',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '007.008 - Abacate Extra Cx Plastica 20 Kg',
+  familia: 'Abacate',
+  motivo: 'Baixa Qualidade',
+  dataRecebimento: '2025-07-27',
+  'tempo(dias)': '28',
+  observacao: '',
+  'quantidade 1': '55',
+  'vendedor 1': 'Vinicius',
+  'quantidade 2': null,
+  'vendedor 2': '',
+  'quantidade 3': null,
+  'vendedor 3': '',
+  'quantidade 4': null,
+  'vendedor 4': '',
+  'quantidade 5': null,
+  'vendedor 5': '',
+  quantidadeSolicitada: '55',
+  quantidadeRepassada: null,
+  status: 'Pendente',
+  usuarioComercial: 'usuariodocemel@gmail.com'
+}
+[Supabase] Enviando dados para atualização: {"id":"S-REP.0000082","dataRepasse":"2025-08-24","usuarioOperacoes":"usuariodocemel@gmail.com","produto":"007.008 - Abacate Extra Cx Plastica 20 Kg","familia":"Abacate","motivo":"Baixa Qualidade","dataRecebimento":"2025-07-27","tempo(dias)":"28","observacao":"","quantidade 1":"55","vendedor 1":"Vinicius","quantidade 2":null,"vendedor 2":"","quantidade 3":null,"vendedor 3":"","quantidade 4":null,"vendedor 4":"","quantidade 5":null,"vendedor 5":"","quantidadeSolicitada":"55","quantidadeRepassada":null,"status":"Pendente","usuarioComercial":"usuariodocemel@gmail.com"}
+[Supabase] Executando query de atualização para ID S-REP.0000082
+[Supabase] Resultado da query: {
+  data: [
+    {
+      id: 'S-REP.0000082',
+      dataRepasse: '2025-08-24',
+      usuarioOperacoes: 'usuariodocemel@gmail.com',
+      produto: '007.008 - Abacate Extra Cx Plastica 20 Kg',
+      familia: 'Abacate',
+      motivo: 'Baixa Qualidade',
+      dataRecebimento: '2025-07-27',
+      'tempo(dias)': 28,
+      observacao: '',
+      'vendedor 1': 'Vinicius',
+      quantidadeSolicitada: 55,
+      quantidadeRepassada: null,
+      status: 'Pendente',
+      usuarioComercial: 'usuariodocemel@gmail.com',
+      'quantidade 2': null,
+      'quantidade 1': 55,
+      'quantidade 3': null,
+      'quantidade 4': null,
+      'quantidade 5': null,
+      'vendedor 3': '',
+      'vendedor 2': '',
+      'vendedor 4': '',
+      'vendedor 5': ''
+    }
+  ],
+  error: null
+}
+[Supabase] Registro atualizado com sucesso: {
+  id: 'S-REP.0000082',
+  dataRepasse: '2025-08-24',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '007.008 - Abacate Extra Cx Plastica 20 Kg',
+  familia: 'Abacate',
+  motivo: 'Baixa Qualidade',
+  dataRecebimento: '2025-07-27',
+  'tempo(dias)': 28,
+  observacao: '',
+  'vendedor 1': 'Vinicius',
+  quantidadeSolicitada: 55,
+  quantidadeRepassada: null,
+  status: 'Pendente',
+  usuarioComercial: 'usuariodocemel@gmail.com',
+  'quantidade 2': null,
+  'quantidade 1': 55,
+  'quantidade 3': null,
+  'quantidade 4': null,
+  'quantidade 5': null,
+  'vendedor 3': '',
+  'vendedor 2': '',
+  'vendedor 4': '',
+  'vendedor 5': ''
+}
+[Supabase] Tentando atualizar registro com ID: S-REP.0000083
+[Supabase] Dados recebidos para atualização: {
+  id: 'S-REP.0000083',
+  dataRepasse: '2025-08-24',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '001.062 - Mamao Formosa 1 Cx Ifco 10 Kg',
+  familia: 'Mamao',
+  motivo: 'Podridao',
+  dataRecebimento: '2025-07-30',
+  'tempo(dias)': '25',
+  observacao: 'teste',
+  'quantidade 1': '50',
+  'vendedor 1': 'Antonio',
+  'quantidade 2': '',
+  'vendedor 2': '',
+  'quantidade 3': '',
+  'vendedor 3': '',
+  'quantidade 4': '',
+  'vendedor 4': '',
+  'quantidade 5': '',
+  'vendedor 5': '',
+  quantidadeSolicitada: '50',
+  quantidadeRepassada: '25',
+  status: 'Concluído Parcialmente',
+  usuarioComercial: 'usuariodocemel@gmail.com'
+}
+[Supabase] Normalizando dados: {"id":"S-REP.0000083","dataRepasse":"2025-08-24","usuarioOperacoes":"usuariodocemel@gmail.com","produto":"001.062 - Mamao Formosa 1 Cx Ifco 10 Kg","familia":"Mamao","motivo":"Podridao","dataRecebimento":"2025-07-30","tempo(dias)":"25","observacao":"teste","quantidade 1":"50","vendedor 1":"Antonio","quantidade 2":"","vendedor 2":"","quantidade 3":"","vendedor 3":"","quantidade 4":"","vendedor 4":"","quantidade 5":"","vendedor 5":"","quantidadeSolicitada":"50","quantidadeRepassada":"25","status":"Concluído Parcialmente","usuarioComercial":"usuariodocemel@gmail.com"}
+[Supabase] Mapeando campo 'id' para 'id'
+[Supabase] Definindo 'id' = "S-REP.0000083"
+[Supabase] Mapeando campo 'dataRepasse' para 'dataRepasse'
+[Supabase] Definindo 'dataRepasse' = "2025-08-24"
+[Supabase] Mapeando campo 'usuarioOperacoes' para 'usuarioOperacoes'
+[Supabase] Definindo 'usuarioOperacoes' = "usuariodocemel@gmail.com"
+[Supabase] Mapeando campo 'produto' para 'produto'
+[Supabase] Definindo 'produto' = "001.062 - Mamao Formosa 1 Cx Ifco 10 Kg"
+[Supabase] Mapeando campo 'familia' para 'familia'
+[Supabase] Definindo 'familia' = "Mamao"
+[Supabase] Mapeando campo 'motivo' para 'motivo'
+[Supabase] Definindo 'motivo' = "Podridao"
+[Supabase] Mapeando campo 'dataRecebimento' para 'dataRecebimento'
+[Supabase] Definindo 'dataRecebimento' = "2025-07-30"
+[Supabase] Mapeando campo 'tempo(dias)' para 'tempo(dias)'
+[Supabase] Definindo 'tempo(dias)' = "25"
+[Supabase] Mapeando campo 'observacao' para 'observacao'
+[Supabase] Definindo 'observacao' = "teste"
+[Supabase] Mapeando campo 'quantidade 1' para 'quantidade 1'
+[Supabase] Definindo 'quantidade 1' = "50"
+[Supabase] Mapeando campo 'vendedor 1' para 'vendedor 1'
+[Supabase] Definindo 'vendedor 1' = "Antonio"
+[Supabase] Mapeando campo 'quantidade 2' para 'quantidade 2'
+[Supabase] Campo numérico 'quantidade 2' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 2' para 'vendedor 2'
+[Supabase] Definindo 'vendedor 2' = ""
+[Supabase] Mapeando campo 'quantidade 3' para 'quantidade 3'
+[Supabase] Campo numérico 'quantidade 3' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 3' para 'vendedor 3'
+[Supabase] Definindo 'vendedor 3' = ""
+[Supabase] Mapeando campo 'quantidade 4' para 'quantidade 4'
+[Supabase] Campo numérico 'quantidade 4' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 4' para 'vendedor 4'
+[Supabase] Definindo 'vendedor 4' = ""
+[Supabase] Mapeando campo 'quantidade 5' para 'quantidade 5'
+[Supabase] Campo numérico 'quantidade 5' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 5' para 'vendedor 5'
+[Supabase] Definindo 'vendedor 5' = ""
+[Supabase] Mapeando campo 'quantidadeSolicitada' para 'quantidadeSolicitada'
+[Supabase] Definindo 'quantidadeSolicitada' = "50"
+[Supabase] Mapeando campo 'quantidadeRepassada' para 'quantidadeRepassada'
+[Supabase] Definindo 'quantidadeRepassada' = "25"
+[Supabase] Mapeando campo 'status' para 'status'
+[Supabase] Definindo 'status' = "Concluído Parcialmente"
+[Supabase] Mapeando campo 'usuarioComercial' para 'usuarioComercial'
+[Supabase] Definindo 'usuarioComercial' = "usuariodocemel@gmail.com"
+[Supabase] Dados normalizados para atualização: {
+  id: 'S-REP.0000083',
+  dataRepasse: '2025-08-24',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '001.062 - Mamao Formosa 1 Cx Ifco 10 Kg',
+  familia: 'Mamao',
+  motivo: 'Podridao',
+  dataRecebimento: '2025-07-30',
+  'tempo(dias)': '25',
+  observacao: 'teste',
+  'quantidade 1': '50',
+  'vendedor 1': 'Antonio',
+  'quantidade 2': null,
+  'vendedor 2': '',
+  'quantidade 3': null,
+  'vendedor 3': '',
+  'quantidade 4': null,
+  'vendedor 4': '',
+  'quantidade 5': null,
+  'vendedor 5': '',
+  quantidadeSolicitada: '50',
+  quantidadeRepassada: '25',
+  status: 'Concluído Parcialmente',
+  usuarioComercial: 'usuariodocemel@gmail.com'
+}
+[Supabase] Enviando dados para atualização: {"id":"S-REP.0000083","dataRepasse":"2025-08-24","usuarioOperacoes":"usuariodocemel@gmail.com","produto":"001.062 - Mamao Formosa 1 Cx Ifco 10 Kg","familia":"Mamao","motivo":"Podridao","dataRecebimento":"2025-07-30","tempo(dias)":"25","observacao":"teste","quantidade 1":"50","vendedor 1":"Antonio","quantidade 2":null,"vendedor 2":"","quantidade 3":null,"vendedor 3":"","quantidade 4":null,"vendedor 4":"","quantidade 5":null,"vendedor 5":"","quantidadeSolicitada":"50","quantidadeRepassada":"25","status":"Concluído Parcialmente","usuarioComercial":"usuariodocemel@gmail.com"}
+[Supabase] Executando query de atualização para ID S-REP.0000083
+[Supabase] Resultado da query: {
+  data: [
+    {
+      id: 'S-REP.0000083',
+      dataRepasse: '2025-08-24',
+      usuarioOperacoes: 'usuariodocemel@gmail.com',
+      produto: '001.062 - Mamao Formosa 1 Cx Ifco 10 Kg',
+      familia: 'Mamao',
+      motivo: 'Podridao',
+      dataRecebimento: '2025-07-30',
+      'tempo(dias)': 25,
+      observacao: 'teste',
+      'vendedor 1': 'Antonio',
+      quantidadeSolicitada: 50,
+      quantidadeRepassada: 25,
+      status: 'Concluído Parcialmente',
+      usuarioComercial: 'usuariodocemel@gmail.com',
+      'quantidade 2': null,
+      'quantidade 1': 50,
+      'quantidade 3': null,
+      'quantidade 4': null,
+      'quantidade 5': null,
+      'vendedor 3': '',
+      'vendedor 2': '',
+      'vendedor 4': '',
+      'vendedor 5': ''
+    }
+  ],
+  error: null
+}
+[Supabase] Registro atualizado com sucesso: {
+  id: 'S-REP.0000083',
+  dataRepasse: '2025-08-24',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '001.062 - Mamao Formosa 1 Cx Ifco 10 Kg',
+  familia: 'Mamao',
+  motivo: 'Podridao',
+  dataRecebimento: '2025-07-30',
+  'tempo(dias)': 25,
+  observacao: 'teste',
+  'vendedor 1': 'Antonio',
+  quantidadeSolicitada: 50,
+  quantidadeRepassada: 25,
+  status: 'Concluído Parcialmente',
+  usuarioComercial: 'usuariodocemel@gmail.com',
+  'quantidade 2': null,
+  'quantidade 1': 50,
+  'quantidade 3': null,
+  'quantidade 4': null,
+  'quantidade 5': null,
+  'vendedor 3': '',
+  'vendedor 2': '',
+  'vendedor 4': '',
+  'vendedor 5': ''
+}
+[Supabase] Tentando atualizar registro com ID: S-REP.0000084
+[Supabase] Dados recebidos para atualização: {
+  id: 'S-REP.0000084',
+  dataRepasse: '2025-08-24',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '051.032 - Ameixa Fresca Nac Cal G Cx 8kg',
+  familia: 'Ameixa',
+  motivo: 'Podridao E Morfo',
+  dataRecebimento: '2025-07-30',
+  'tempo(dias)': '25',
+  observacao: 'teste',
+  'quantidade 1': '50',
+  'vendedor 1': 'Antonio',
+  'quantidade 2': '',
+  'vendedor 2': '',
+  'quantidade 3': '',
+  'vendedor 3': '',
+  'quantidade 4': '',
+  'vendedor 4': '',
+  'quantidade 5': '',
+  'vendedor 5': '',
+  quantidadeSolicitada: '50',
+  quantidadeRepassada: '50',
+  status: '100% Concluído',
+  usuarioComercial: 'usuariodocemel@gmail.com'
+}
+[Supabase] Normalizando dados: {"id":"S-REP.0000084","dataRepasse":"2025-08-24","usuarioOperacoes":"usuariodocemel@gmail.com","produto":"051.032 - Ameixa Fresca Nac Cal G Cx 8kg","familia":"Ameixa","motivo":"Podridao E Morfo","dataRecebimento":"2025-07-30","tempo(dias)":"25","observacao":"teste","quantidade 1":"50","vendedor 1":"Antonio","quantidade 2":"","vendedor 2":"","quantidade 3":"","vendedor 3":"","quantidade 4":"","vendedor 4":"","quantidade 5":"","vendedor 5":"","quantidadeSolicitada":"50","quantidadeRepassada":"50","status":"100% Concluído","usuarioComercial":"usuariodocemel@gmail.com"}
+[Supabase] Mapeando campo 'id' para 'id'
+[Supabase] Definindo 'id' = "S-REP.0000084"
+[Supabase] Mapeando campo 'dataRepasse' para 'dataRepasse'
+[Supabase] Definindo 'dataRepasse' = "2025-08-24"
+[Supabase] Mapeando campo 'usuarioOperacoes' para 'usuarioOperacoes'
+[Supabase] Definindo 'usuarioOperacoes' = "usuariodocemel@gmail.com"
+[Supabase] Mapeando campo 'produto' para 'produto'
+[Supabase] Definindo 'produto' = "051.032 - Ameixa Fresca Nac Cal G Cx 8kg"
+[Supabase] Mapeando campo 'familia' para 'familia'
+[Supabase] Definindo 'familia' = "Ameixa"
+[Supabase] Mapeando campo 'motivo' para 'motivo'
+[Supabase] Definindo 'motivo' = "Podridao E Morfo"
+[Supabase] Mapeando campo 'dataRecebimento' para 'dataRecebimento'
+[Supabase] Definindo 'dataRecebimento' = "2025-07-30"
+[Supabase] Mapeando campo 'tempo(dias)' para 'tempo(dias)'
+[Supabase] Definindo 'tempo(dias)' = "25"
+[Supabase] Mapeando campo 'observacao' para 'observacao'
+[Supabase] Definindo 'observacao' = "teste"
+[Supabase] Mapeando campo 'quantidade 1' para 'quantidade 1'
+[Supabase] Definindo 'quantidade 1' = "50"
+[Supabase] Mapeando campo 'vendedor 1' para 'vendedor 1'
+[Supabase] Definindo 'vendedor 1' = "Antonio"
+[Supabase] Mapeando campo 'quantidade 2' para 'quantidade 2'
+[Supabase] Campo numérico 'quantidade 2' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 2' para 'vendedor 2'
+[Supabase] Definindo 'vendedor 2' = ""
+[Supabase] Mapeando campo 'quantidade 3' para 'quantidade 3'
+[Supabase] Campo numérico 'quantidade 3' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 3' para 'vendedor 3'
+[Supabase] Definindo 'vendedor 3' = ""
+[Supabase] Mapeando campo 'quantidade 4' para 'quantidade 4'
+[Supabase] Campo numérico 'quantidade 4' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 4' para 'vendedor 4'
+[Supabase] Definindo 'vendedor 4' = ""
+[Supabase] Mapeando campo 'quantidade 5' para 'quantidade 5'
+[Supabase] Campo numérico 'quantidade 5' vazio, definindo como null
+[Supabase] Mapeando campo 'vendedor 5' para 'vendedor 5'
+[Supabase] Definindo 'vendedor 5' = ""
+[Supabase] Mapeando campo 'quantidadeSolicitada' para 'quantidadeSolicitada'
+[Supabase] Definindo 'quantidadeSolicitada' = "50"
+[Supabase] Mapeando campo 'quantidadeRepassada' para 'quantidadeRepassada'
+[Supabase] Definindo 'quantidadeRepassada' = "50"
+[Supabase] Mapeando campo 'status' para 'status'
+[Supabase] Definindo 'status' = "100% Concluído"
+[Supabase] Mapeando campo 'usuarioComercial' para 'usuarioComercial'
+[Supabase] Definindo 'usuarioComercial' = "usuariodocemel@gmail.com"
+[Supabase] Dados normalizados para atualização: {
+  id: 'S-REP.0000084',
+  dataRepasse: '2025-08-24',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '051.032 - Ameixa Fresca Nac Cal G Cx 8kg',
+  familia: 'Ameixa',
+  motivo: 'Podridao E Morfo',
+  dataRecebimento: '2025-07-30',
+  'tempo(dias)': '25',
+  observacao: 'teste',
+  'quantidade 1': '50',
+  'vendedor 1': 'Antonio',
+  'quantidade 2': null,
+  'vendedor 2': '',
+  'quantidade 3': null,
+  'vendedor 3': '',
+  'quantidade 4': null,
+  'vendedor 4': '',
+  'quantidade 5': null,
+  'vendedor 5': '',
+  quantidadeSolicitada: '50',
+  quantidadeRepassada: '50',
+  status: '100% Concluído',
+  usuarioComercial: 'usuariodocemel@gmail.com'
+}
+[Supabase] Enviando dados para atualização: {"id":"S-REP.0000084","dataRepasse":"2025-08-24","usuarioOperacoes":"usuariodocemel@gmail.com","produto":"051.032 - Ameixa Fresca Nac Cal G Cx 8kg","familia":"Ameixa","motivo":"Podridao E Morfo","dataRecebimento":"2025-07-30","tempo(dias)":"25","observacao":"teste","quantidade 1":"50","vendedor 1":"Antonio","quantidade 2":null,"vendedor 2":"","quantidade 3":null,"vendedor 3":"","quantidade 4":null,"vendedor 4":"","quantidade 5":null,"vendedor 5":"","quantidadeSolicitada":"50","quantidadeRepassada":"50","status":"100% Concluído","usuarioComercial":"usuariodocemel@gmail.com"}
+[Supabase] Executando query de atualização para ID S-REP.0000084
+[Supabase] Resultado da query: {
+  data: [
+    {
+      id: 'S-REP.0000084',
+      dataRepasse: '2025-08-24',
+      usuarioOperacoes: 'usuariodocemel@gmail.com',
+      produto: '051.032 - Ameixa Fresca Nac Cal G Cx 8kg',
+      familia: 'Ameixa',
+      motivo: 'Podridao E Morfo',
+      dataRecebimento: '2025-07-30',
+      'tempo(dias)': 25,
+      observacao: 'teste',
+      'vendedor 1': 'Antonio',
+      quantidadeSolicitada: 50,
+      quantidadeRepassada: 50,
+      status: '100% Concluído',
+      usuarioComercial: 'usuariodocemel@gmail.com',
+      'quantidade 2': null,
+      'quantidade 1': 50,
+      'quantidade 3': null,
+      'quantidade 4': null,
+      'quantidade 5': null,
+      'vendedor 3': '',
+      'vendedor 2': '',
+      'vendedor 4': '',
+      'vendedor 5': ''
+    }
+  ],
+  error: null
+}
+[Supabase] Registro atualizado com sucesso: {
+  id: 'S-REP.0000084',
+  dataRepasse: '2025-08-24',
+  usuarioOperacoes: 'usuariodocemel@gmail.com',
+  produto: '051.032 - Ameixa Fresca Nac Cal G Cx 8kg',
+  familia: 'Ameixa',
+  motivo: 'Podridao E Morfo',
+  dataRecebimento: '2025-07-30',
+  'tempo(dias)': 25,
+  observacao: 'teste',
+  'vendedor 1': 'Antonio',
+  quantidadeSolicitada: 50,
+  quantidadeRepassada: 50,
+  status: '100% Concluído',
+  usuarioComercial: 'usuariodocemel@gmail.com',
+  'quantidade 2': null,
+  'quantidade 1': 50,
+  'quantidade 3': null,
+  'quantidade 4': null,
+  'quantidade 5': null,
+  'vendedor 3': '',
+  'vendedor 2': '',
+  'vendedor 4': '',
+  'vendedor 5': ''
+}
+[Sincronização] Sincronização concluída!
+[Sincronização] Registros inseridos: 0
+[Sincronização] Registros atualizados: 10
+[Sincronização] Erros: 0
+==> Your service is live 🎉
+==> 
+==> ///////////////////////////////////////////////////////////
+==> 
+==> Available at your primary URL https://repasselist-gdm-backend.onrender.com
+==> 
+==> ///////////////////////////////////////////////////////////

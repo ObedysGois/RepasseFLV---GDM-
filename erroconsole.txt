@@ -1,0 +1,26 @@
+Failed to load resource: net::ERR_CONNECTION_REFUSED
+
+script.js:951 Erro de login: TypeError: Failed to fetch
+    at HTMLFormElement.<anonymous> (script.js:933:36)
+localhost:3000/api/login:1 
+ Failed to load resource: net::ERR_CONNECTION_REFUSED
+script.js:951 Erro de login: TypeError: Failed to fetch
+    at HTMLFormElement.<anonymous> (script.js:933:36)
+localhost:3000/api/login:1 
+ Failed to load resource: net::ERR_CONNECTION_REFUSED
+script.js:951 Erro de login: TypeError: Failed to fetch
+    at HTMLFormElement.<anonymous> (script.js:933:36)
+localhost:3000/api/login:1 
+ Failed to load resource: net::ERR_CONNECTION_REFUSED
+script.js:951 Erro de login: TypeError: Failed to fetch
+    at HTMLFormElement.<anonymous> (script.js:933:36)
+localhost:3000/api/login:1 
+ Failed to load resource: net::ERR_CONNECTION_REFUSED
+script.js:951 Erro de login: TypeError: Failed to fetch
+    at HTMLFormElement.<anonymous> (script.js:933:36)
+(anônimo)	@	script.js:951
+localhost:3000/api/login:1 
+ Failed to load resource: net::ERR_CONNECTION_REFUSED
+script.js:951 Erro de login: TypeError: Failed to fetch
+    at HTMLFormElement.<anonymous> (script.js:933:36)
+(anônimo)	@	script.js:951

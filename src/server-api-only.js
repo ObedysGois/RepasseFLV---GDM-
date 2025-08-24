@@ -11,6 +11,9 @@ const app = express();
 const port = process.env.PORT || 10000;
 const saltRounds = 10;
 
+// Middleware para servir arquivos estáticos da pasta 'public'
+app.use(express.static(path.join(__dirname, '..', 'public')));
+
 // Middleware para permitir que o frontend acesse a API
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -25,8 +28,13 @@ app.use((req, res, next) => {
 // Middleware para interpretar o corpo das requisições como JSON
 app.use(express.json());
 
-// Rota raiz - apenas retorna informação da API
+// Rota raiz - serve o arquivo index.html
 app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
+});
+
+// Rota de informações da API
+app.get('/api', (req, res) => {
   res.json({ 
     message: 'API RepasseFLV - GDM funcionando!',
     endpoints: [

@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const apiUrl = 'http://localhost:3000/api';
+    // Determina a URL da API com base no ambiente
+    const isProduction = window.location.hostname !== 'localhost';
+    const apiUrl = isProduction ? '/api' : 'http://localhost:3000/api';
 
     // Cache de elementos do DOM
     let pages = document.querySelectorAll('.page');
