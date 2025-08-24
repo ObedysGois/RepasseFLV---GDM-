@@ -6,9 +6,10 @@ const urlsToCache = [
   '/script.js',
   '/pwa.css',
   '/pwa.js',
+  '/clear-cache.js',
   '/manifest.json',
   '/browserconfig.xml',
-  '/logopwa',
+  '/logopwa.png',
   '/logogrupodocemel.png',
   '/temaclaro.png',
   '/temaescuro.png',
@@ -25,7 +26,15 @@ self.addEventListener('install', (event) => {
     caches.open(CACHE_NAME)
       .then((cache) => {
         console.log('Cache aberto');
-        return cache.addAll(urlsToCache);
+        // Adicionar recursos um por vez para evitar falhas
+        return Promise.allSettled(
+          urlsToCache.map(url => 
+            cache.add(url).catch(error => {
+              console.warn(`Falha ao cachear ${url}:`, error);
+              return null;
+            })
+          )
+        );
       })
       .catch((error) => {
         console.error('Erro ao instalar cache:', error);
@@ -104,8 +113,8 @@ self.addEventListener('push', (event) => {
   
   const options = {
     body: event.data ? event.data.text() : 'Nova atualização disponível',
-    icon: '/logopwa',
-    badge: '/logopwa',
+    icon: '/logopwa.png',
+    badge: '/logopwa.png',
     vibrate: [100, 50, 100],
     data: {
       dateOfArrival: Date.now(),
@@ -115,12 +124,12 @@ self.addEventListener('push', (event) => {
         {
           action: 'explore',
           title: 'Abrir App',
-          icon: '/logopwa'
+          icon: '/logopwa.png'
         },
         {
           action: 'close',
           title: 'Fechar',
-          icon: '/logopwa'
+          icon: '/logopwa.png'
         }
       ]
   };

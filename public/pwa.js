@@ -155,8 +155,8 @@ class PWA {
   sendLocalNotification(title, options = {}) {
     if ('Notification' in window && Notification.permission === 'granted') {
              const defaultOptions = {
-         icon: '/logopwa',
-         badge: '/logopwa',
+         icon: '/logopwa.png',
+         badge: '/logopwa.png',
          vibrate: [100, 50, 100],
          ...options
        };

@@ -12,7 +12,7 @@
   "categories": ["business", "productivity"],
   "icons": [
     {
-      "src": "logopwa",
+      "src": "logopwa.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable any"
@@ -26,7 +26,7 @@
       "url": "/#dashboard",
       "icons": [
         {
-          "src": "logopwa",
+          "src": "logopwa.png",
           "sizes": "512x512"
         }
       ]
@@ -38,7 +38,7 @@
       "url": "/#registros",
       "icons": [
         {
-          "src": "logopwa",
+          "src": "logopwa.png",
           "sizes": "512x512"
         }
       ]
@@ -50,7 +50,7 @@
       "url": "/#resumos",
       "icons": [
         {
-          "src": "logopwa",
+          "src": "logopwa.png",
           "sizes": "512x512"
         }
       ]
