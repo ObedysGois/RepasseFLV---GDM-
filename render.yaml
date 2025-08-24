@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: repasselist-gdm-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 18.18.0
+      - key: NODE_OPTIONS
+        value: --openssl-legacy-provider

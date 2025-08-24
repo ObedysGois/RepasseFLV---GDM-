@@ -1,0 +1,218 @@
+==> Running 'npm start'
+> repasselist-gdm-backend@1.0.0 start
+> node src/server.js
+[dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+    at JWT.refreshTokenNoCache (/opt/render/project/src/node_modules/google-auth-library/build/src/auth/jwtclient.js:173:36)
+    at JWT.refreshToken (/opt/render/project/src/node_modules/google-auth-library/build/src/auth/oauth2client.js:187:24)
+    at JWT.getRequestMetadataAsync (/opt/render/project/src/node_modules/google-auth-library/build/src/auth/oauth2client.js:333:28)
+    at Axios.request (/opt/render/project/src/node_modules/axios/dist/node/axios.cjs:4317:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async GoogleSpreadsheet.loadInfo (/opt/render/project/src/node_modules/google-spreadsheet/dist/index.cjs:1:27683)
+    at async initialize (/opt/render/project/src/src/googleSheets.js:49:9)
+    at Axios.request (/opt/render/project/src/node_modules/axios/dist/node/axios.cjs:4317:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async GoogleSpreadsheet.loadInfo (/opt/render/project/src/node_modules/google-spreadsheet/dist/index.cjs:1:27683)
+    at async getRegistros (/opt/render/project/src/src/googleSheets.js:58:5)
+    at async sincronizarRegistros (/opt/render/project/src/src/sincronizacao.js:17:29) {
+  opensslErrorStack: [ 'error:1E08010C:DECODER routines::unsupported' ],
+  library: 'DECODER routines',
+  reason: 'unsupported',
+  code: 'ERR_OSSL_UNSUPPORTED'
+}
+[Sincronização] Erro durante a sincronização: Error: error:1E08010C:DECODER routines::unsupported
+    at Sign.sign (node:internal/crypto/sig:128:29)
+    at Object.sign (/opt/render/project/src/node_modules/jwa/index.js:166:45)
+    at Object.jwsSign [as sign] (/opt/render/project/src/node_modules/jws/lib/sign-stream.js:32:24)
+    at GoogleToken._GoogleToken_requestToken (/opt/render/project/src/node_modules/gtoken/build/src/index.js:235:27)
+    at GoogleToken._GoogleToken_getTokenAsyncInner (/opt/render/project/src/node_modules/gtoken/build/src/index.js:180:97)
+    at GoogleToken._GoogleToken_getTokenAsync (/opt/render/project/src/node_modules/gtoken/build/src/index.js:160:173)
+    at GoogleToken.getToken (/opt/render/project/src/node_modules/gtoken/build/src/index.js:110:102)
+    at JWT.refreshTokenNoCache (/opt/render/project/src/node_modules/google-auth-library/build/src/auth/jwtclient.js:173:36)
+    at JWT.refreshToken (/opt/render/project/src/node_modules/google-auth-library/build/src/auth/oauth2client.js:187:24)
+    at JWT.getRequestMetadataAsync (/opt/render/project/src/node_modules/google-auth-library/build/src/auth/oauth2client.js:333:28)
+    at Axios.request (/opt/render/project/src/node_modules/axios/dist/node/axios.cjs:4317:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async GoogleSpreadsheet.loadInfo (/opt/render/project/src/node_modules/google-spreadsheet/dist/index.cjs:1:27683)
+    at async initialize (/opt/render/project/src/src/googleSheets.js:49:9)
+    at Axios.request (/opt/render/project/src/node_modules/axios/dist/node/axios.cjs:4317:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async GoogleSpreadsheet.loadInfo (/opt/render/project/src/node_modules/google-spreadsheet/dist/index.cjs:1:27683)
+    at async getRegistros (/opt/render/project/src/src/googleSheets.js:58:5)
+    at async sincronizarRegistros (/opt/render/project/src/src/sincronizacao.js:17:29) {
+  opensslErrorStack: [ 'error:1E08010C:DECODER routines::unsupported' ],
+  library: 'DECODER routines',
+  reason: 'unsupported',
+  code: 'ERR_OSSL_UNSUPPORTED'
+}
+[Sincronização] Erro na sincronização inicial: Error: error:1E08010C:DECODER routines::unsupported
+    at Sign.sign (node:internal/crypto/sig:128:29)
+    at Object.sign (/opt/render/project/src/node_modules/jwa/index.js:166:45)
+    at Object.jwsSign [as sign] (/opt/render/project/src/node_modules/jws/lib/sign-stream.js:32:24)
+    at GoogleToken._GoogleToken_requestToken (/opt/render/project/src/node_modules/gtoken/build/src/index.js:235:27)
+    at GoogleToken._GoogleToken_getTokenAsyncInner (/opt/render/project/src/node_modules/gtoken/build/src/index.js:180:97)
+    at GoogleToken._GoogleToken_getTokenAsync (/opt/render/project/src/node_modules/gtoken/build/src/index.js:160:173)
+    at GoogleToken.getToken (/opt/render/project/src/node_modules/gtoken/build/src/index.js:110:102)
+    at JWT.refreshTokenNoCache (/opt/render/project/src/node_modules/google-auth-library/build/src/auth/jwtclient.js:173:36)
+    at JWT.refreshToken (/opt/render/project/src/node_modules/google-auth-library/build/src/auth/oauth2client.js:187:24)
+    at JWT.getRequestMetadataAsync (/opt/render/project/src/node_modules/google-auth-library/build/src/auth/oauth2client.js:333:28)
+    at Axios.request (/opt/render/project/src/node_modules/axios/dist/node/axios.cjs:4317:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async GoogleSpreadsheet.loadInfo (/opt/render/project/src/node_modules/google-spreadsheet/dist/index.cjs:1:27683)
+    at async initialize (/opt/render/project/src/src/googleSheets.js:49:9)
+    at Axios.request (/opt/render/project/src/node_modules/axios/dist/node/axios.cjs:4317:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async GoogleSpreadsheet.loadInfo (/opt/render/project/src/node_modules/google-spreadsheet/dist/index.cjs:1:27683)
+    at async getRegistros (/opt/render/project/src/src/googleSheets.js:58:5)
+    at async sincronizarRegistros (/opt/render/project/src/src/sincronizacao.js:17:29) {
+  opensslErrorStack: [ 'error:1E08010C:DECODER routines::unsupported' ],
+  library: 'DECODER routines',
+  reason: 'unsupported',
+  code: 'ERR_OSSL_UNSUPPORTED'
+}
+node:internal/process/promises:394
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+Error: error:1E08010C:DECODER routines::unsupported
+    at Sign.sign (node:internal/crypto/sig:128:29)
+    at Object.sign (/opt/render/project/src/node_modules/jwa/index.js:166:45)
+    at Object.jwsSign [as sign] (/opt/render/project/src/node_modules/jws/lib/sign-stream.js:32:24)
+    at GoogleToken._GoogleToken_requestToken (/opt/render/project/src/node_modules/gtoken/build/src/index.js:235:27)
+    at GoogleToken._GoogleToken_getTokenAsyncInner (/opt/render/project/src/node_modules/gtoken/build/src/index.js:180:97)
+    at GoogleToken._GoogleToken_getTokenAsync (/opt/render/project/src/node_modules/gtoken/build/src/index.js:160:173)
+    at GoogleToken.getToken (/opt/render/project/src/node_modules/gtoken/build/src/index.js:110:102)
+    at JWT.refreshTokenNoCache (/opt/render/project/src/node_modules/google-auth-library/build/src/auth/jwtclient.js:173:36)
+    at JWT.refreshToken (/opt/render/project/src/node_modules/google-auth-library/build/src/auth/oauth2client.js:187:24)
+    at JWT.getRequestMetadataAsync (/opt/render/project/src/node_modules/google-auth-library/build/src/auth/oauth2client.js:333:28)
+    at Axios.request (/opt/render/project/src/node_modules/axios/dist/node/axios.cjs:4317:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async GoogleSpreadsheet.loadInfo (/opt/render/project/src/node_modules/google-spreadsheet/dist/index.cjs:1:27683)
+    at async initialize (/opt/render/project/src/src/googleSheets.js:49:9)
+    at Axios.request (/opt/render/project/src/node_modules/axios/dist/node/axios.cjs:4317:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async GoogleSpreadsheet.loadInfo (/opt/render/project/src/node_modules/google-spreadsheet/dist/index.cjs:1:27683)
+    at async getRegistros (/opt/render/project/src/src/googleSheets.js:58:5)
+    at async sincronizarRegistros (/opt/render/project/src/src/sincronizacao.js:17:29) {
+  opensslErrorStack: [ 'error:1E08010C:DECODER routines::unsupported' ],
+  library: 'DECODER routines',
+  reason: 'unsupported',
+  code: 'ERR_OSSL_UNSUPPORTED'
+}
+Node.js v22.16.0
+==> Exited with status 1
+==> Common ways to troubleshoot your deploy: https://render.com/docs/troubleshooting-deploys
+==> Running 'npm start'
+> repasselist-gdm-backend@1.0.0 start
+> node src/server.js
+[dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+[dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+[dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+Tentando conectar ao Supabase...
+Credenciais Google OAuth ausentes. Configure google_oauth.json na raiz ou variáveis de ambiente.
+[Sincronização] Agendando sincronização a cada 30 minutos
+[Sincronização] Iniciando sincronização de registros...
+Servidor rodando em http://localhost:10000
+Sincronização automática entre Google Sheets e Supabase ativada
+Erro ao conectar com a planilha: Error: error:1E08010C:DECODER routines::unsupported
+    at Sign.sign (node:internal/crypto/sig:128:29)
+    at Object.sign (/opt/render/project/src/node_modules/jwa/index.js:166:45)
+    at Object.jwsSign [as sign] (/opt/render/project/src/node_modules/jws/lib/sign-stream.js:32:24)
+    at GoogleToken._GoogleToken_requestToken (/opt/render/project/src/node_modules/gtoken/build/src/index.js:235:27)
+    at GoogleToken._GoogleToken_getTokenAsyncInner (/opt/render/project/src/node_modules/gtoken/build/src/index.js:180:97)
+    at GoogleToken._GoogleToken_getTokenAsync (/opt/render/project/src/node_modules/gtoken/build/src/index.js:160:173)
+    at GoogleToken.getToken (/opt/render/project/src/node_modules/gtoken/build/src/index.js:110:102)
+    at JWT.refreshTokenNoCache (/opt/render/project/src/node_modules/google-auth-library/build/src/auth/jwtclient.js:173:36)
+    at JWT.refreshToken (/opt/render/project/src/node_modules/google-auth-library/build/src/auth/oauth2client.js:187:24)
+    at JWT.getRequestMetadataAsync (/opt/render/project/src/node_modules/google-auth-library/build/src/auth/oauth2client.js:333:28)
+    at Axios.request (/opt/render/project/src/node_modules/axios/dist/node/axios.cjs:4317:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async GoogleSpreadsheet.loadInfo (/opt/render/project/src/node_modules/google-spreadsheet/dist/index.cjs:1:27683)
+    at async initialize (/opt/render/project/src/src/googleSheets.js:49:9)
+    at Axios.request (/opt/render/project/src/node_modules/axios/dist/node/axios.cjs:4317:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async GoogleSpreadsheet.loadInfo (/opt/render/project/src/node_modules/google-spreadsheet/dist/index.cjs:1:27683)
+    at async getRegistros (/opt/render/project/src/src/googleSheets.js:58:5)
+    at async sincronizarRegistros (/opt/render/project/src/src/sincronizacao.js:17:29) {
+  opensslErrorStack: [ 'error:1E08010C:DECODER routines::unsupported' ],
+  library: 'DECODER routines',
+  reason: 'unsupported',
+  code: 'ERR_OSSL_UNSUPPORTED'
+}
+[Sincronização] Erro durante a sincronização: Error: error:1E08010C:DECODER routines::unsupported
+    at Sign.sign (node:internal/crypto/sig:128:29)
+    at Object.sign (/opt/render/project/src/node_modules/jwa/index.js:166:45)
+    at Object.jwsSign [as sign] (/opt/render/project/src/node_modules/jws/lib/sign-stream.js:32:24)
+    at GoogleToken._GoogleToken_requestToken (/opt/render/project/src/node_modules/gtoken/build/src/index.js:235:27)
+    at GoogleToken._GoogleToken_getTokenAsyncInner (/opt/render/project/src/node_modules/gtoken/build/src/index.js:180:97)
+    at GoogleToken._GoogleToken_getTokenAsync (/opt/render/project/src/node_modules/gtoken/build/src/index.js:160:173)
+    at GoogleToken.getToken (/opt/render/project/src/node_modules/gtoken/build/src/index.js:110:102)
+    at JWT.refreshTokenNoCache (/opt/render/project/src/node_modules/google-auth-library/build/src/auth/jwtclient.js:173:36)
+    at JWT.refreshToken (/opt/render/project/src/node_modules/google-auth-library/build/src/auth/oauth2client.js:187:24)
+    at JWT.getRequestMetadataAsync (/opt/render/project/src/node_modules/google-auth-library/build/src/auth/oauth2client.js:333:28)
+    at Axios.request (/opt/render/project/src/node_modules/axios/dist/node/axios.cjs:4317:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async GoogleSpreadsheet.loadInfo (/opt/render/project/src/node_modules/google-spreadsheet/dist/index.cjs:1:27683)
+    at async initialize (/opt/render/project/src/src/googleSheets.js:49:9)
+    at Axios.request (/opt/render/project/src/node_modules/axios/dist/node/axios.cjs:4317:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async GoogleSpreadsheet.loadInfo (/opt/render/project/src/node_modules/google-spreadsheet/dist/index.cjs:1:27683)
+    at async getRegistros (/opt/render/project/src/src/googleSheets.js:58:5)
+    at async sincronizarRegistros (/opt/render/project/src/src/sincronizacao.js:17:29) {
+  opensslErrorStack: [ 'error:1E08010C:DECODER routines::unsupported' ],
+  library: 'DECODER routines',
+  reason: 'unsupported',
+  code: 'ERR_OSSL_UNSUPPORTED'
+}
+[Sincronização] Erro na sincronização inicial: Error: error:1E08010C:DECODER routines::unsupported
+    at Sign.sign (node:internal/crypto/sig:128:29)
+    at Object.sign (/opt/render/project/src/node_modules/jwa/index.js:166:45)
+    at Object.jwsSign [as sign] (/opt/render/project/src/node_modules/jws/lib/sign-stream.js:32:24)
+    at GoogleToken._GoogleToken_requestToken (/opt/render/project/src/node_modules/gtoken/build/src/index.js:235:27)
+    at GoogleToken._GoogleToken_getTokenAsyncInner (/opt/render/project/src/node_modules/gtoken/build/src/index.js:180:97)
+    at GoogleToken._GoogleToken_getTokenAsync (/opt/render/project/src/node_modules/gtoken/build/src/index.js:160:173)
+    at GoogleToken.getToken (/opt/render/project/src/node_modules/gtoken/build/src/index.js:110:102)
+    at JWT.refreshTokenNoCache (/opt/render/project/src/node_modules/google-auth-library/build/src/auth/jwtclient.js:173:36)
+    at JWT.refreshToken (/opt/render/project/src/node_modules/google-auth-library/build/src/auth/oauth2client.js:187:24)
+    at JWT.getRequestMetadataAsync (/opt/render/project/src/node_modules/google-auth-library/build/src/auth/oauth2client.js:333:28)
+    at Axios.request (/opt/render/project/src/node_modules/axios/dist/node/axios.cjs:4317:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async GoogleSpreadsheet.loadInfo (/opt/render/project/src/node_modules/google-spreadsheet/dist/index.cjs:1:27683)
+    at async initialize (/opt/render/project/src/src/googleSheets.js:49:9)
+    at Axios.request (/opt/render/project/src/node_modules/axios/dist/node/axios.cjs:4317:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async GoogleSpreadsheet.loadInfo (/opt/render/project/src/node_modules/google-spreadsheet/dist/index.cjs:1:27683)
+    at async getRegistros (/opt/render/project/src/src/googleSheets.js:58:5)
+    at async sincronizarRegistros (/opt/render/project/src/src/sincronizacao.js:17:29) {
+  opensslErrorStack: [ 'error:1E08010C:DECODER routines::unsupported' ],
+  library: 'DECODER routines',
+  reason: 'unsupported',
+  code: 'ERR_OSSL_UNSUPPORTED'
+}
+node:internal/process/promises:394
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+Error: error:1E08010C:DECODER routines::unsupported
+    at Sign.sign (node:internal/crypto/sig:128:29)
+    at Object.sign (/opt/render/project/src/node_modules/jwa/index.js:166:45)
+    at Object.jwsSign [as sign] (/opt/render/project/src/node_modules/jws/lib/sign-stream.js:32:24)
+    at GoogleToken._GoogleToken_requestToken (/opt/render/project/src/node_modules/gtoken/build/src/index.js:235:27)
+    at GoogleToken._GoogleToken_getTokenAsyncInner (/opt/render/project/src/node_modules/gtoken/build/src/index.js:180:97)
+    at GoogleToken._GoogleToken_getTokenAsync (/opt/render/project/src/node_modules/gtoken/build/src/index.js:160:173)
+    at GoogleToken.getToken (/opt/render/project/src/node_modules/gtoken/build/src/index.js:110:102)
+    at JWT.refreshTokenNoCache (/opt/render/project/src/node_modules/google-auth-library/build/src/auth/jwtclient.js:173:36)
+    at JWT.refreshToken (/opt/render/project/src/node_modules/google-auth-library/build/src/auth/oauth2client.js:187:24)
+    at JWT.getRequestMetadataAsync (/opt/render/project/src/node_modules/google-auth-library/build/src/auth/oauth2client.js:333:28)
+    at Axios.request (/opt/render/project/src/node_modules/axios/dist/node/axios.cjs:4317:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async GoogleSpreadsheet.loadInfo (/opt/render/project/src/node_modules/google-spreadsheet/dist/index.cjs:1:27683)
+    at async initialize (/opt/render/project/src/src/googleSheets.js:49:9)
+    at Axios.request (/opt/render/project/src/node_modules/axios/dist/node/axios.cjs:4317:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async GoogleSpreadsheet.loadInfo (/opt/render/project/src/node_modules/google-spreadsheet/dist/index.cjs:1:27683)
+    at async getRegistros (/opt/render/project/src/src/googleSheets.js:58:5)
+    at async sincronizarRegistros (/opt/render/project/src/src/sincronizacao.js:17:29) {
+  opensslErrorStack: [ 'error:1E08010C:DECODER routines::unsupported' ],
+  library: 'DECODER routines',
+  reason: 'unsupported',
+  code: 'ERR_OSSL_UNSUPPORTED'
+}
+Node.js v22.16.0

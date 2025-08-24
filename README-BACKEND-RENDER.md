@@ -46,8 +46,8 @@ Este guia fornece instruções passo a passo para implantar o backend do Repasse
    SPREADSHEET_ID=id_da_sua_planilha
 
    # Credenciais do Google (necessárias no Render)
-   GOOGLE_CLIENT_EMAIL=seu-email-de-servico@seu-projeto.iam.gserviceaccount.com
-   GOOGLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nSua chave privada aqui\n-----END PRIVATE KEY-----\n"
+   GOOGLE_CLIENT_EMAIL=sheets-editor@projeto-app-repasselist-gdm.iam.gserviceaccount.com
+   GOOGLE_PRIVATE_KEY="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"
 
    # Configurações do servidor
    PORT=10000

@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "Backend para o aplicativo RepasseList GDM",
   "main": "src/server.js",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "start:render": "bash render-start.sh"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.7",
