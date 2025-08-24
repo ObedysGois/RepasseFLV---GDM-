@@ -1415,6 +1415,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const userType = (currentUser?.tipo || '').toLowerCase();
         const isComercial = userType === 'comercial';
         const isGerencia = userType === 'gerencia';
+        const isOperacao = userType === 'operacao' || userType === 'operação';
 
         document.querySelectorAll('.delete-btn').forEach(btn => {
             // Ocultar botão de exclusão para usuários comerciais e gerencia
