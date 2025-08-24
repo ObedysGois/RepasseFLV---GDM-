@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RepasseFLV - GDM</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div id="login-screen" class="login-screen" style="background-image: url('temaclaro.png');">
+        <div class="login-form form-box">
+            <div class="form-value">
+                <h2>Login</h2>
+                <button id="google-login">Login com Google</button>
+
+                <form id="custom-login-form" class="auth-form">
+                    <div class="inputbox">
+                        <span class="icon fa-regular fa-envelope"></span>
+                        <input type="email" id="login-email" required>
+                        <label for="login-email">Email</label>
+                    </div>
+                    <div class="inputbox">
+                        <span class="icon fa-solid fa-lock"></span>
+                        <input type="password" id="login-senha" required>
+                        <label for="login-senha">Senha</label>
+                    </div>
+                    <button type="submit" class="btn-primary">Entrar</button>
+                </form>
+
+                <h3>Cadastro</h3>
+                <form id="signup-form" class="auth-form">
+                    <div class="inputbox">
+                        <span class="icon fa-regular fa-user"></span>
+                        <input type="text" id="signup-usuario" required>
+                        <label for="signup-usuario">Usuário</label>
+                    </div>
+                    <div class="inputbox">
+                        <span class="icon fa-regular fa-envelope"></span>
+                        <input type="email" id="signup-email" required>
+                        <label for="signup-email">Email</label>
+                    </div>
+                    <div class="inputbox">
+                        <span class="icon fa-solid fa-lock"></span>
+                        <input type="password" id="signup-senha" required>
+                        <label for="signup-senha">Senha</label>
+                    </div>
+                    <button type="submit" class="btn-primary">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar header-grid">
+      <div class="header-content">
+        <img src="logogrupodocemel.png" alt="Qualidade e Confiança" class="app-logo">
+        <label class="logo">RepasseFLV - GDM</label>
+      </div>
+      
+      <!-- Botão de Menu Mobile -->
+      <button class="menu-toggle" id="mobile-menu-btn" aria-label="Menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      
+      <ul id="main-nav" class="main-nav">
+        <li><a href="#dashboard" class="nav-link active">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>Dashboard</span>
+        </a></li>
+        <li><a href="#registros" class="nav-link">
+          <i class="fa-solid fa-clipboard-list"></i>
+          <span>Registros</span>
+        </a></li>
+        <!-- Removido conforme NOVAIMPLEMENTACAO -->
+        <!--
+        <li><a href="#solicitacao" class="nav-link">
+          <span class="icon">📋</span>
+          <span>Solicitação</span>
+        </a></li>
+        -->
+        <li><a href="#resumos" class="nav-link">
+          <i class="fa-solid fa-check-to-slot"></i>
+          <span>Resumos</span>
+        </a></li>
+        <li><a href="#relatorios" class="nav-link">
+          <i class="fa-solid fa-file-alt"></i>
+          <span>Relatórios</span>
+        </a></li>
+        <li><a href="#historico" class="nav-link">
+          <i class="fa-solid fa-history"></i>
+          <span>Histórico</span>
+        </a></li>
+        <li id="nav-perfil" style="display:none;"><a href="#perfil" class="nav-link">
+          <i class="fa-solid fa-user"></i>
+          <span>Perfil</span>
+        </a></li>
+      </ul>
+      
+      <div class="nav-actions">
+        <div class="theme-switcher">
+          <div class="togglewrapper" id="theme-toggle-wrapper">
+            <input type="checkbox" class="dn" id="dn">
+            <label for="dn" class="toggle">
+              <span class="toggle_handler">
+                <span class="crater crater--1"></span>
+                <span class="crater crater--2"></span>
+                <span class="crater crater--3"></span>
+              </span>
+              <span class="star star--1"></span>
+              <span class="star star--2"></span>
+              <span class="star star--3"></span>
+              <span class="star star--4"></span>
+              <span class="star star--5"></span>
+              <span class="star star--6"></span>
+            </label>
+          </div>
+        </div>
+        <button id="logout-btn" style="display: none;">
+          <i class="fa-solid fa-sign-out-alt"></i>
+          <span class="logout-text">Logout</span>
+        </button>
+      </div>
+    </nav>
+    
+    <!-- Overlay para menu mobile -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <main>
+        <!-- Dashboard -->
+        <section id="dashboard" class="page" style="display:block">
+            <h2>Dashboard</h2>
+
+            <div class="filters-container mobile-friendly">
+                <div class="filter-search-wrapper">
+                    <i class="fa-solid fa-search search-icon"></i>
+                    <input type="text" id="dashboard-search" placeholder="Buscar produtos, vendedores...">
+                </div>
+                
+                <div class="filter-group-row">
+                    <div class="date-filters">
+                        <div class="filter-group">
+                            <label>Início</label>
+                            <input type="date" id="dashboard-data-inicio">
+                        </div>
+                        <div class="filter-group">
+                            <label>Fim</label>
+                            <input type="date" id="dashboard-data-fim">
+                        </div>
+                    </div>
+                    
+                    <div class="select-filters">
+                        <select id="dashboard-produto"><option value="">Todos os Produtos</option></select>
+                        <select id="dashboard-vendedor"><option value="">Todos os Vendedores</option></select>
+                        <select id="dashboard-motivo"><option value="">Todos os Motivos</option></select>
+                    </div>
+                    
+                    <div class="filter-actions">
+                        <button id="dashboard-limpar-filtros" class="button secondary-btn">
+                            <i class="fa-solid fa-eraser"></i>
+                            <span>Limpar</span>
+                        </button>
+                        
+                        <div class="predefined-periods">
+                            <button class="button period-btn" data-period="yesterday">
+                                <i class="fa-solid fa-calendar-minus"></i>
+                                <span>Ontem</span>
+                            </button>
+                            <button class="button period-btn" data-period="today">
+                                <i class="fa-solid fa-calendar-day"></i>
+                                <span>Hoje</span>
+                            </button>
+                            <button class="button period-btn" data-period="week">
+                                <i class="fa-solid fa-calendar-week"></i>
+                                <span>Semana</span>
+                            </button>
+                            <button class="button period-btn" data-period="month">
+                                <i class="fa-solid fa-calendar"></i>
+                                <span>Mês</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-cards">
+                <!-- Total de Registros -->
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-database"></i></div>
+                    <div>
+                        <h3>Total Registros</h3>
+                        <p id="total-registros">0</p>
+                        <div class="card-subinfo" id="total-registros-subinfo"></div>
+                    </div>
+                </div>
+                
+                <!-- Total Quantidade Solicitada -->
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-basket-shopping"></i></div>
+                    <div>
+                        <h3>Total Qtd. Solicitada</h3>
+                        <p id="total-qtd-solicitada">0</p>
+                        <div class="card-subinfo" id="total-qtd-solicitada-subinfo"></div>
+                    </div>
+                </div>
+                
+                <!-- Total Quantidade Repassada -->
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-check-to-slot"></i></div>
+                    <div>
+                        <h3>Total Qtd. Repassada</h3>
+                        <p id="total-qtd-repassada">0</p>
+                        <div class="card-subinfo" id="total-qtd-repassada-subinfo"></div>
+                    </div>
+                </div>
+                
+                <!-- Taxa Média de Conclusão -->
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-percent"></i></div>
+                    <div>
+                        <h3>Taxa Média de Conclusão</h3>
+                        <p id="taxa-media-conclusao">0%</p>
+                        <div class="card-subinfo" id="taxa-media-conclusao-subinfo"></div>
+                    </div>
+                </div>
+                
+                <!-- Total de Produtos -->
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                    <div>
+                        <h3>Total de Produtos</h3>
+                        <p id="total-produtos">0</p>
+                    </div>
+                </div>
+                
+                <!-- Top 1 Produto -->
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-box-open"></i></div>
+                    <div>
+                        <h3>Top 1 Produto</h3>
+                        <p id="top-produto">-</p>
+                        <div class="card-subinfo" id="top-produto-subinfo"></div>
+                    </div>
+                </div>
+                
+                <!-- Top 1 Família -->
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-leaf"></i></div>
+                    <div>
+                        <h3>Top 1 Família</h3>
+                        <p id="top-familia">-</p>
+                        <div class="card-subinfo" id="top-familia-subinfo"></div>
+                    </div>
+                </div>
+                
+                <!-- Top 1 Produto com Maior Tempo -->
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-clock"></i></div>
+                    <div>
+                        <h3>Produto + Tempo</h3>
+                        <p id="top-produto-tempo">-</p>
+                        <div class="card-subinfo" id="top-produto-tempo-subinfo"></div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-user-tie"></i></div>
+                    <div><h3>Top Vendedor</h3><p id="top-vendedor">-</p></div>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                    <div><h3>Top Motivo</h3><p id="top-motivo">-</p></div>
+                </div>
+            </div>
+
+            <div class="dashboard-charts">
+                <div class="chart-container-produto">
+                    <h4 class="chart-title">Volume por Vendedor</h4>
+                    <canvas id="vendedor-pie-chart"></canvas>
+                </div>
+                <div class="chart-container-produto">
+                    <h4 class="chart-title">Volume por Motivo</h4>
+                    <canvas id="motivos-bar-chart"></canvas>
+                </div>
+            </div>
+            
+            <div class="chart-container-produto">
+                <h4 class="chart-title">Volume por Família</h4>
+                <canvas id="produto-bar-chart"></canvas>
+            </div>
+            
+            <div class="chart-container">
+                <h4 class="chart-title">Evolução do Volume</h4>
+                <canvas id="temporal-line-chart"></canvas>
+            </div>
+
+            <h3>Top Produtos</h3>
+            <div class="table-container">
+                <table id="top-produtos-table">
+                    <thead><tr><th>Produto</th><th>Volume</th></tr></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <h3>Registros do Dia</h3>
+            <div class="table-container">
+                <div class="table-wrapper" style="overflow-x: auto;">
+                    <table id="registros-do-dia-table">
+                        <thead>
+                            <tr>
+                                <th>Data</th><th>Produto</th><th>Motivo</th><th>Recebimento</th><th>Tempo (dias)</th><th>Qtd. Solicitada</th>
+                                <th>Quantidade 1</th><th>Vendedor 1</th><th>Quantidade 2</th><th>Vendedor 2</th>
+                                <th>Quantidade 3</th><th>Vendedor 3</th><th>Quantidade 4</th><th>Vendedor 4</th>
+                                <th>Quantidade 5</th><th>Vendedor 5</th><th>Qtd. Repassada</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registros -->
+        <section id="registros" class="page" style="display:none">
+            <h2>Registros de Produtos</h2>
+            <form id="registro-form" class="responsive-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>ID</label>
+                        <input type="text" id="registro-id" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Data do Repasse</label>
+                        <input type="date" id="data-repasse" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Produto</label>
+                        <select id="produto" required></select>
+                    </div>
+                    <div class="form-group">
+                        <label>Família</label>
+                        <input type="text" id="familia" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Motivo</label>
+                        <select id="motivo" required>
+                            <option value="Baixa Qualidade">Baixa Qualidade</option>
+                            <option value="Baixo Peso">Baixo Peso</option>
+                            <option value="Cicatrizes e/ou Manchas">Cicatrizes e/ou Manchas</option>
+                            <option value="Outro">Outro (digitar)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Data de Recebimento</label>
+                        <input type="date" id="data-recebimento" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Tempo (dias)</label>
+                        <input type="number" id="tempo" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Usuário (Operações)</label>
+                        <input type="email" id="usuario-operacoes" readonly>
+                    </div>
+                </div>
+                <div class="form-group full-width">
+                    <label>Observação</label>
+                    <textarea id="observacao" rows="3"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="button primary-btn">
+                        <i class="fa-solid fa-save"></i>
+                        <span>Salvar Registro Inicial</span>
+                    </button>
+                    <button type="button" id="repetir-registros-btn" class="button secondary-btn">
+                        <i class="fa-solid fa-repeat"></i>
+                        <span>Repetir Registros</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Solicitação - REMOVIDA CONFORME NOVAIMPLEMENTACAO.txt -->
+        <!-- 
+        <section id="solicitacao" class="page" style="display:none">
+            <h2>Solicitação de Repasse</h2>
+            <div id="solicitacoes-pendentes-lista"></div>
+
+            <div id="solicitacao-form-container" style="display:none; margin-top:20px;">
+                <form id="solicitacao-form" class="responsive-form">
+                    <div class="form-group">
+                        <label>ID do Registro</label>
+                        <input type="text" id="solicitacao-registro-id" readonly>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Vendedor</label>
+                            <select id="solicitacao-vendedor" required>
+                                <option value="">Selecione um vendedor</option>
+                                <option value="Vendedor A">Vendedor A</option>
+                                <option value="Vendedor B">Vendedor B</option>
+                                <option value="Vendedor C">Vendedor C</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Qtd. Solicitada</label>
+                            <input type="number" id="quantidade-solicitada" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Status do Repasse</label>
+                            <select id="status-repasse" required>
+                                <option value="Pendente">Pendente</option>
+                                <option value="Iniciado">Iniciado</option>
+                                <option value="Concluído Parcialmente">Concluído Parcialmente</option>
+                                <option value="100% Concluído">100% Concluído</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Usuário (Comercial)</label>
+                            <input type="text" id="usuario-comercial" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="button primary-btn">
+                            <span class="icon">💾</span>
+                            <span>Salvar Solicitação</span>
+                        </button>
+                        <button type="button" id="cancelar-solicitacao" class="button secondary-btn">
+                            <span class="icon">❌</span>
+                            <span>Cancelar</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        -->
+
+        <!-- Resumos -->
+        <section id="resumos" class="page" style="display:none">
+            <h2>Resumos</h2>
+            <div class="filters-container mobile-friendly">
+                <div class="filter-search-wrapper">
+                    <i class="fa-solid fa-search search-icon"></i>
+                    <input type="text" id="resumos-search" placeholder="Buscar produtos, vendedores...">
+                </div>
+                
+                <div class="filter-group-row">
+                    <div class="date-filters">
+                        <div class="filter-group">
+                            <label>Início</label>
+                            <input type="date" id="resumos-data-inicio">
+                        </div>
+                        <div class="filter-group">
+                            <label>Fim</label>
+                            <input type="date" id="resumos-data-fim">
+                        </div>
+                    </div>
+                    
+                    <div class="select-filters">
+                        <select id="resumos-produto"><option value="">Todos os Produtos</option></select>
+                        <select id="resumos-vendedor"><option value="">Todos os Vendedores</option></select>
+                        <select id="resumos-motivo"><option value="">Todos os Motivos</option></select>
+                    </div>
+                    
+                    <div class="filter-actions">
+                        <button id="resumos-limpar-filtros" class="button secondary-btn">
+                            <i class="fa-solid fa-eraser"></i>
+                            <span>Limpar</span>
+                        </button>
+                        
+                        <div class="predefined-periods">
+                            <button class="button period-btn" data-period="yesterday" data-target="resumos">
+                                <i class="fa-solid fa-calendar-minus"></i>
+                                <span>Ontem</span>
+                            </button>
+                            <button class="button period-btn" data-period="today" data-target="resumos">
+                                <i class="fa-solid fa-calendar-day"></i>
+                                <span>Hoje</span>
+                            </button>
+                            <button class="button period-btn" data-period="week" data-target="resumos">
+                                <i class="fa-solid fa-calendar-week"></i>
+                                <span>Semana</span>
+                            </button>
+                            <button class="button period-btn" data-period="month" data-target="resumos">
+                                <i class="fa-solid fa-calendar"></i>
+                                <span>Mês</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cards de Resumo -->
+            <div class="summary-cards-container">
+                <div class="summary-cards">
+                    <div class="summary-card" id="resumos-card-solicitada">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Qtd. Pendente</div>
+                            <div class="card-value">0</div>
+                            <div class="card-subtitle">Pendente + Iniciado</div>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-card" id="resumos-card-repassada">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-check-circle"></i>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Qtd. Concluída</div>
+                            <div class="card-value">0</div>
+                            <div class="card-subtitle">100% + Parcialmente</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botão de compartilhamento em massa -->
+            <div class="share-all-container" style="margin:15px 0; text-align:center;">
+                <button id="share-all-btn" class="button share-all-btn">
+                    <i class="fa-solid fa-share-nodes"></i>
+                    <span>Compartilhar Todos os Resumos</span>
+                </button>
+            </div>
+
+            <div class="zoom-controls" style="margin:10px 0;">
+              <strong>Gráficos</strong>
+              <button id="charts-zoom-out">-</button>
+              <button id="charts-zoom-reset">100%</button>
+              <button id="charts-zoom-in">+</button>
+              <span style="margin:0 12px;"></span>
+              <strong>Tabela</strong>
+              <button id="resumos-zoom-out">-</button>
+              <button id="resumos-zoom-reset">100%</button>
+              <button id="resumos-zoom-in">+</button>
+            </div>
+
+            <div class="table-container">
+                <table id="resumos-table">
+                    <thead>
+                        <thead>
+                            <tr>
+                                <th>ID</th><th>Data</th><th>Produto</th><th>Motivo</th><th>Tempo</th><th>Quantidade</th><th>Qtd. Solicitada</th><th>Qtd. Repassada</th><th>Vendedor</th><th>Status</th><th>Ações</th>
+                            </tr>
+                        </thead>
+                    </thead>
+                    <tbody id="resumos-tbody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Relatórios (conteúdo é injetado pelo script) -->
+        <section id="relatorios" class="page" style="display:none"></section>
+
+        <!-- Histórico (conteúdo é injetado pelo script) -->
+        <section id="historico" class="page" style="display:none"></section>
+
+        <!-- Perfil -->
+        <section id="perfil" class="page" style="display:none">
+            <h2>Perfil — Administração de Usuários</h2>
+
+            <h3>Criar novo usuário</h3>
+            <form id="perfil-create-form" class="responsive-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Usuário</label>
+                        <input type="text" id="perfil-nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="perfil-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Senha</label>
+                        <input type="password" id="perfil-senha" required>
+                    </div>
+                </div>
+                <p style="margin:6px 0 14px 0;">Obs.: novos usuários são criados como <b>Operação</b> por padrão.</p>
+                <button type="submit" class="button primary-btn">Criar usuário</button>
+            </form>
+
+            <h3>Usuários</h3>
+            <div id="users-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Tipo</th>
+                            <th>Criado</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="perfil-tabela-usuarios"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Quantidade (novo) -->
+    <div id="quantidade-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('quantidade-modal').style.display='none'">&times;</span>
+            <h3>Adicionar Quantidade</h3>
+            <form id="quantidade-form" class="responsive-form">
+                <input type="hidden" id="quantidade-registro-id">
+
+                <div class="form-group">
+                    <label for="quantidade-valor">Quantidade</label>
+                    <input type="number" id="quantidade-valor" required min="0" step="any">
+                </div>
+
+                <div id="quantidade-confirmacao" style="display:none;">
+                    <p>Deseja salvar a quantidade solicitada?</p>
+                    <button type="button" id="confirmar-quantidade" class="button primary-btn">
+                        <span class="icon">✅</span>
+                        <span>Sim</span>
+                    </button>
+                    <button type="button" onclick="document.getElementById('quantidade-modal').style.display='none'" class="button secondary-btn">
+                        <span class="icon">❌</span>
+                        <span>Cancelar</span>
+                    </button>
+                </div>
+
+                <div id="quantidade-detalhes" style="display:none;">
+                    <div class="form-group">
+                        <label for="quantidade-vendedor">Vendedor</label>
+                        <select id="quantidade-vendedor" required>
+                            <option value="">Selecione um vendedor</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantidade-status">Status</label>
+                        <select id="quantidade-status" required>
+                            <option value="Pendente" selected>Pendente</option>
+                            <option value="Iniciado">Iniciado</option>
+                            <option value="Concluído Parcialmente">Concluído Parcialmente</option>
+                            <option value="100% Concluído">100% Concluído</option>
+                        </select>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="button primary-btn">
+                            <span class="icon">💾</span>
+                            <span>Salvar</span>
+                        </button>
+                        <button type="button" onclick="document.getElementById('quantidade-modal').style.display='none'" class="button secondary-btn">Cancelar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Modal de Edição existente -->
+    <div id="edit-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('edit-modal').style.display='none'">&times;</span>
+            <h3>Editar Registro</h3>
+            <form id="edit-form" class="responsive-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="edit-id">ID</label>
+                        <input type="text" id="edit-id" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-data-repasse">Data do Repasse</label>
+                        <input type="date" id="edit-data-repasse">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-produto">Produto</label>
+                        <select id="edit-produto"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-motivo">Motivo</label>
+                        <select id="edit-motivo">
+                            <option value="Baixa Qualidade">Baixa Qualidade</option>
+                            <option value="Baixo Peso">Baixo Peso</option>
+                            <option value="Cicatrizes e/ou Manchas">Cicatrizes e/ou Manchas</option>
+                            <option value="Outro">Outro (digitar)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-data-recebimento">Data de Recebimento</label>
+                        <input type="date" id="edit-data-recebimento">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-vendedor">Vendedor</label>
+                        <select id="edit-vendedor">
+                            <option value="Antonio">Antonio</option>
+                            <option value="Ricardo">Ricardo</option>
+                            <option value="Nixon">Nixon</option>
+                            <option value="Vinicius">Vinicius</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-quantidade-solicitada">Qtd. Solicitada</label>
+                        <input type="number" id="edit-quantidade-solicitada">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-quantidade-repassada">Qtd. Repassada</label>
+                        <input type="number" id="edit-quantidade-repassada">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-status-repasse">Status</label>
+                        <select id="edit-status-repasse">
+                            <option value="Pendente">Pendente</option>
+                            <option value="Iniciado">Iniciado</option>
+                            <option value="100% Concluído">100% Concluído</option>
+                            <option value="Concluído Parcialmente">Concluído Parcialmente</option>
+                            <option value="Recusado">Recusado</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="edit-observacao">Observação</label>
+                    <textarea id="edit-observacao" rows="3"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="button primary-btn">Salvar</button>
+                    <button type="button" class="button secondary-btn" onclick="document.getElementById('edit-modal').style.display='none'">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Repetir Registros -->
+    <div id="repetir-registros-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('repetir-registros-modal').style.display='none'">&times;</span>
+            <h3>Repetir Registros</h3>
+            <p>Deseja replicar todos os registros que foram realizados no dia anterior (ontem)?</p>
+            <div id="registros-anteriores-lista"></div>
+            <div class="form-actions">
+                <button id="confirmar-repetir" class="button primary-btn">
+                    <i class="fa-solid fa-check"></i>
+                    <span>Sim</span>
+                </button>
+                <button type="button" class="button secondary-btn" onclick="document.getElementById('repetir-registros-modal').style.display='none'">
+                    <i class="fa-solid fa-xmark"></i>
+                    <span>Não</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
