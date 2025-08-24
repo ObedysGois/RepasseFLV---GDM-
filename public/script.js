@@ -992,7 +992,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const w = 500, h = 600;
             const left = (screen.width - w) / 2;
             const top = (screen.height - h) / 2;
-            window.open('/api/auth/google', 'googleAuth', `width=${w},height=${h},left=${left},top=${top}`);
+            // Usar URL completa com a porta para evitar problemas de redirecionamento
+            const currentUrl = window.location.origin;
+            window.open(`${currentUrl}/api/auth/google`, 'googleAuth', `width=${w},height=${h},left=${left},top=${top}`);
         });
 
         // Logout
@@ -1004,13 +1006,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         window.addEventListener('message', async (event) => {
+            console.log('Mensagem recebida:', event.data);
             const data = event.data;
-            if (!data || data.source !== 'repasse-auth') return;
+            if (!data || data.source !== 'repasse-auth') {
+                console.log('Mensagem ignorada: não é do repasse-auth');
+                return;
+            }
+            console.log('Processando mensagem de autenticação:', data);
             if (data.status === 'success' && data.user) {
+                console.log('Login com Google bem-sucedido, salvando usuário:', data.user);
                 localStorage.setItem('user', JSON.stringify(data.user));
                 applyAuthState();
                 await afterLoginBoot();
             } else {
+                console.error('Erro no login Google:', data.error || 'Falha desconhecida');
                 alert(`Erro no login Google: ${data.error || 'Falha desconhecida'}`);
             }
         });

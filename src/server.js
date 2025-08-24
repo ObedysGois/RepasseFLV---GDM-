@@ -122,18 +122,21 @@ app.get('/api/auth/google', (req, res) => {
 // Callback do Google
 app.get('/api/auth/google/callback', async (req, res) => {
   try {
+    console.log('Recebido callback do Google:', req.query);
     const { code } = req.query;
     if (!code) return res.status(400).send('Código ausente');
 
     const profile = await googleAuth.getUserFromCode(code);
+    console.log('Perfil do usuário obtido:', profile);
     let user = await supabase.getUserByEmail(profile.email);
 
     if (!user) {
+      console.log('Criando novo usuário para:', profile.email);
       // Cria usuário com senha aleatória (hash), tipo padrão 'operacao'
       const randomPass = Math.random().toString(36).slice(2) + Date.now().toString(36);
       const hashedSenha = await bcrypt.hash(randomPass, saltRounds);
       user = await supabase.createUser({
-        usuario: profile.usuario,
+        usuario: profile.name || profile.email.split('@')[0],
         email: profile.email,
         senha: hashedSenha,
         tipo: 'operacao'
@@ -143,14 +146,19 @@ app.get('/api/auth/google/callback', async (req, res) => {
     const { senha, ...userData } = user;
 
     // Envia o usuário de volta ao opener e fecha a janela
+    console.log('Enviando dados do usuário para a janela principal:', userData);
     return res.send(`
 <html><body>
 <script>
   (function() {
+    console.log('Executando script de callback');
     if (window.opener) {
+      console.log('Janela opener encontrada, enviando mensagem');
       window.opener.postMessage({ source: 'repasse-auth', status: 'success', user: ${JSON.stringify(userData)} }, '*');
-      window.close();
+      console.log('Mensagem enviada, fechando janela');
+      setTimeout(function() { window.close(); }, 1000);
     } else {
+      console.log('Janela opener não encontrada');
       document.write('Autenticado. Pode fechar esta janela.');
     }
   })();

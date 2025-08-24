@@ -39,22 +39,31 @@ function getAuthUrl() {
 }
 
 async function getUserFromCode(code) {
-  const { tokens } = await client.getToken(code);
-  client.setCredentials(tokens);
+  try {
+    console.log('Obtendo token a partir do código de autorização');
+    const { tokens } = await client.getToken(code);
+    client.setCredentials(tokens);
 
-  // Valida o id_token e extrai o perfil
-  const ticket = await client.verifyIdToken({
-    idToken: tokens.id_token,
-    audience: conf.client_id
-  });
-  const payload = ticket.getPayload();
+    // Valida o id_token e extrai o perfil
+    console.log('Verificando id_token');
+    const ticket = await client.verifyIdToken({
+      idToken: tokens.id_token,
+      audience: conf.client_id
+    });
+    const payload = ticket.getPayload();
+    console.log('Payload do token obtido com sucesso');
 
   return {
     googleId: payload.sub,
     email: payload.email,
+    name: payload.name,
     usuario: payload.name || (payload.email ? payload.email.split('@')[0] : 'usuario'),
     picture: payload.picture
   };
+  } catch (error) {
+    console.error('Erro ao obter informações do usuário a partir do código:', error);
+    throw error;
+  }
 }
 
 module.exports = { getAuthUrl, getUserFromCode };
