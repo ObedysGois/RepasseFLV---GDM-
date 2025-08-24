@@ -3457,11 +3457,23 @@ document.addEventListener('DOMContentLoaded', () => {
         'Content-Type': 'application/json',
         'x-user-email': current?.email || ''
       });
-      // Usar a porta do servidor atual (8080 ou 3000)
-      const serverPort = window.location.port || '8080';
-      const serverHost = window.location.hostname || 'localhost';
-      const serverProtocol = window.location.protocol || 'http:';
-      return fetch(`${serverProtocol}//${serverHost}:${serverPort}${path}`, { ...init, headers });
+      
+      // Determinar a URL base da API com base no ambiente
+      const isProduction = window.location.hostname !== 'localhost';
+      let baseUrl;
+      
+      if (isProduction) {
+        // Em produção, use a URL relativa sem especificar a porta
+        baseUrl = '';
+      } else {
+        // Em desenvolvimento local, use a porta específica
+        const serverPort = window.location.port || '3000';
+        const serverHost = window.location.hostname || 'localhost';
+        const serverProtocol = window.location.protocol || 'http:';
+        baseUrl = `${serverProtocol}//${serverHost}:${serverPort}`;
+      }
+      
+      return fetch(`${baseUrl}${path}`, { ...init, headers });
     }
 
     // --- INICIAR APLICAÇÃO ---

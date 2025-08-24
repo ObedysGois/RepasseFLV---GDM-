@@ -1,11 +1,12 @@
 # Solução para o Erro de Login no Render
 
-## Problema Identificado
+## Problemas Identificados
 
-O problema de login na aplicação hospedada no Render ocorria devido a dois fatores principais:
+Os problemas na aplicação hospedada no Render ocorriam devido a três fatores principais:
 
 1. O frontend estava tentando acessar a API em `http://localhost:3000/api`, que é um endereço local e não funciona quando a aplicação está hospedada no Render.
 2. O servidor não estava configurado para servir os arquivos estáticos corretamente no ambiente de produção.
+3. A função `apiFetch` estava adicionando a porta explicitamente na URL (usando a porta 8080), o que causava erros nas chamadas para as APIs de histórico e usuários.
 
 ## Alterações Realizadas
 
@@ -24,7 +25,55 @@ const apiUrl = isProduction ? '/api' : 'http://localhost:3000/api';
 
 Esta alteração faz com que o frontend use `/api` quando estiver em produção (no Render) e continue usando `http://localhost:3000/api` quando estiver em desenvolvimento local.
 
-### 2. Configuração do Servidor (server-api-only.js)
+### 2. Correção da função apiFetch
+
+Modificamos a função `apiFetch` para não adicionar a porta explicitamente na URL quando em produção:
+
+```javascript
+// Antes
+async function apiFetch(path, init = {}) {
+  const current = getCurrentUser();
+  const headers = Object.assign({}, init.headers || {}, {
+    'Content-Type': 'application/json',
+    'x-user-email': current?.email || ''
+  });
+  // Usar a porta do servidor atual (8080 ou 3000)
+  const serverPort = window.location.port || '8080';
+  const serverHost = window.location.hostname || 'localhost';
+  const serverProtocol = window.location.protocol || 'http:';
+  return fetch(`${serverProtocol}//${serverHost}:${serverPort}${path}`, { ...init, headers });
+}
+
+// Depois
+async function apiFetch(path, init = {}) {
+  const current = getCurrentUser();
+  const headers = Object.assign({}, init.headers || {}, {
+    'Content-Type': 'application/json',
+    'x-user-email': current?.email || ''
+  });
+  
+  // Determinar a URL base da API com base no ambiente
+  const isProduction = window.location.hostname !== 'localhost';
+  let baseUrl;
+  
+  if (isProduction) {
+    // Em produção, use a URL relativa sem especificar a porta
+    baseUrl = '';
+  } else {
+    // Em desenvolvimento local, use a porta específica
+    const serverPort = window.location.port || '3000';
+    const serverHost = window.location.hostname || 'localhost';
+    const serverProtocol = window.location.protocol || 'http:';
+    baseUrl = `${serverProtocol}//${serverHost}:${serverPort}`;
+  }
+  
+  return fetch(`${baseUrl}${path}`, { ...init, headers });
+}
+```
+
+Esta alteração corrige os erros nas chamadas para as APIs de histórico e usuários, permitindo que essas funcionalidades funcionem corretamente no ambiente de produção.
+
+### 3. Configuração do Servidor (server-api-only.js)
 
 Atualizamos o arquivo `server-api-only.js` para servir os arquivos estáticos da pasta `public`:
 
@@ -55,7 +104,7 @@ app.get('/api', (req, res) => {
 });
 ```
 
-### 3. Configuração do Deploy no Render (render.yaml)
+### 4. Configuração do Deploy no Render (render.yaml)
 
 Atualizamos o arquivo `render.yaml` para usar o script `start:api-only` em vez de `update:render`:
 
