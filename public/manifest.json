@@ -1,0 +1,59 @@
+{
+  "name": "RepasseFLV - GDM",
+  "short_name": "RepasseFLV",
+  "description": "Sistema de gerenciamento de repasse de produtos FLV - Grupo Doce Mel",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4CAF50",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "pt-BR",
+  "categories": ["business", "productivity"],
+  "icons": [
+    {
+      "src": "logopwa",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "Acessar o dashboard principal",
+      "url": "/#dashboard",
+      "icons": [
+        {
+          "src": "logopwa",
+          "sizes": "512x512"
+        }
+      ]
+    },
+    {
+      "name": "Novo Registro",
+      "short_name": "Registro",
+      "description": "Criar novo registro de produto",
+      "url": "/#registros",
+      "icons": [
+        {
+          "src": "logopwa",
+          "sizes": "512x512"
+        }
+      ]
+    },
+    {
+      "name": "Resumos",
+      "short_name": "Resumos",
+      "description": "Visualizar resumos e relatórios",
+      "url": "/#resumos",
+      "icons": [
+        {
+          "src": "logopwa",
+          "sizes": "512x512"
+        }
+      ]
+    }
+  ]
+}

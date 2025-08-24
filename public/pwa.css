@@ -1,0 +1,331 @@
+/* PWA Notifications and UI Elements */
+
+/* Notificações PWA */
+.pwa-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10000;
+  max-width: 350px;
+  animation: slideInRight 0.3s ease-out;
+  border-left: 4px solid #4CAF50;
+}
+
+.pwa-notification-success {
+  border-left-color: #4CAF50;
+}
+
+.pwa-notification-warning {
+  border-left-color: #FF9800;
+}
+
+.pwa-notification-error {
+  border-left-color: #F44336;
+}
+
+.pwa-notification-info {
+  border-left-color: #2196F3;
+}
+
+.pwa-notification-content {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  gap: 12px;
+}
+
+.pwa-notification-content i {
+  font-size: 20px;
+  color: #4CAF50;
+}
+
+.pwa-notification-success .pwa-notification-content i {
+  color: #4CAF50;
+}
+
+.pwa-notification-warning .pwa-notification-content i {
+  color: #FF9800;
+}
+
+.pwa-notification-error .pwa-notification-content i {
+  color: #F44336;
+}
+
+.pwa-notification-info .pwa-notification-content i {
+  color: #2196F3;
+}
+
+.pwa-notification-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pwa-notification-text strong {
+  font-weight: 600;
+  color: #333;
+}
+
+.pwa-notification-text span {
+  font-size: 14px;
+  color: #666;
+}
+
+.pwa-notification-close {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.pwa-notification-close:hover {
+  background-color: #f5f5f5;
+}
+
+/* Notificação de Atualização */
+.pwa-update-notification {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2196F3;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+  z-index: 10000;
+  animation: slideInUp 0.3s ease-out;
+}
+
+.pwa-update-content {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  gap: 12px;
+}
+
+.pwa-update-content i {
+  font-size: 18px;
+}
+
+.pwa-update-content span {
+  font-weight: 500;
+}
+
+.pwa-update-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.pwa-update-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.pwa-close-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.pwa-close-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Prompt de Instalação */
+.pwa-install-prompt {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4CAF50;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+  z-index: 10000;
+  animation: slideInUp 0.3s ease-out;
+  max-width: 400px;
+}
+
+.pwa-install-content {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  gap: 12px;
+}
+
+.pwa-install-content i {
+  font-size: 18px;
+}
+
+.pwa-install-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pwa-install-text strong {
+  font-weight: 600;
+}
+
+.pwa-install-text span {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.pwa-install-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.pwa-install-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.pwa-install-close {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.pwa-install-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Animações */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateX(-50%) translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .pwa-notification {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+  }
+  
+  .pwa-update-notification,
+  .pwa-install-prompt {
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    transform: none;
+    max-width: none;
+  }
+  
+  .pwa-update-content,
+  .pwa-install-content {
+    padding: 12px 16px;
+  }
+  
+  .pwa-install-text span {
+    display: none;
+  }
+}
+
+/* Modo escuro */
+@media (prefers-color-scheme: dark) {
+  .pwa-notification {
+    background: #2d2d2d;
+    color: white;
+  }
+  
+  .pwa-notification-text strong {
+    color: white;
+  }
+  
+  .pwa-notification-text span {
+    color: #ccc;
+  }
+  
+  .pwa-notification-close {
+    color: #ccc;
+  }
+  
+  .pwa-notification-close:hover {
+    background-color: #3d3d3d;
+  }
+}
+
+/* Indicador de status offline */
+.offline-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #FF9800;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 9999;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+}
+
+.offline-indicator.show {
+  transform: translateY(0);
+}
+
+/* Loading spinner para PWA */
+.pwa-loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
