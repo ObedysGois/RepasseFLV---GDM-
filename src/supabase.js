@@ -379,7 +379,7 @@ async function updateRegistro(data) {
         }
         
         console.log(`[Supabase] Tentando atualizar registro com ID: ${id}`);
-        console.log(`[Supabase] Dados recebidos para atualização:`, data);
+        console.log(`[Supabase] Dados recebidos para atualização:`, JSON.stringify(data));
         
         // Normalizar dados antes de atualizar usando a função normalizeData
         const normalizedData = normalizeData(data);
@@ -387,7 +387,7 @@ async function updateRegistro(data) {
         // Garantir que o ID seja mantido
         normalizedData.id = id;
         
-        console.log(`[Supabase] Dados normalizados para atualização:`, normalizedData);
+        console.log(`[Supabase] Dados normalizados para atualização:`, JSON.stringify(normalizedData));
         
         // Verificar se há dados para atualizar
         if (Object.keys(normalizedData).length <= 1) { // Apenas o ID
@@ -395,12 +395,18 @@ async function updateRegistro(data) {
             throw new Error('Nenhum dado válido para atualizar após normalização');
         }
         
-        console.log(`[Supabase] Enviando dados para atualização:`, JSON.stringify(normalizedData));
+        // Remover campos que podem causar problemas na atualização
+        const cleanedData = { ...normalizedData };
+        delete cleanedData.created_at;
+        delete cleanedData.updated_at;
+        
+        console.log(`[Supabase] Enviando dados para atualização:`, JSON.stringify(cleanedData));
         
         console.log(`[Supabase] Executando query de atualização para ID ${id}`);
+        console.log(`[Supabase] URL da API Supabase: ${supabase.supabaseUrl}`);
         const { data: updatedData, error } = await supabase
             .from('Registros')
-            .update(normalizedData)
+            .update(cleanedData)
             .eq('id', id)
             .select();
         

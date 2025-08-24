@@ -266,11 +266,12 @@ app.put('/api/registros/:id', async (req, res) => {
         const dadosAtualizados = req.body;
         
         console.log(`[Server] Recebida requisição para atualizar registro ${id}`);
-        console.log(`[Server] Dados recebidos:`, dadosAtualizados);
+        console.log(`[Server] Dados recebidos:`, JSON.stringify(dadosAtualizados));
         
         // Atualizar no Google Sheets
         console.log(`[Server] Tentando atualizar no Google Sheets...`);
         const registroAtualizado = await sheets.updateRegistro(id, dadosAtualizados);
+        console.log(`[Server] Resultado da atualização no Google Sheets:`, JSON.stringify(registroAtualizado));
         
         // Também atualizar no Supabase
         console.log(`[Server] Tentando atualizar no Supabase...`);
@@ -278,8 +279,25 @@ app.put('/api/registros/:id', async (req, res) => {
             console.log('[Server] Tentando atualizar registro no Supabase:', JSON.stringify(dadosAtualizados));
             // Garantir que o ID esteja no objeto de dados
             const dadosComId = { ...dadosAtualizados, id };
+            
+            // Garantir que os campos numéricos sejam convertidos para números
+            if (dadosComId.quantidadeSolicitada) {
+                dadosComId.quantidadeSolicitada = parseFloat(dadosComId.quantidadeSolicitada);
+            }
+            if (dadosComId.quantidadeRepassada) {
+                dadosComId.quantidadeRepassada = parseFloat(dadosComId.quantidadeRepassada);
+            }
+            // Verificar campos de quantidade numerados
+            for (let i = 1; i <= 5; i++) {
+                const campo = `quantidade ${i}`;
+                if (dadosComId[campo]) {
+                    dadosComId[campo] = parseFloat(dadosComId[campo]);
+                }
+            }
+            
+            console.log('[Server] Dados com ID para Supabase (após conversão):', JSON.stringify(dadosComId));
             const supabaseResult = await supabase.updateRegistro(dadosComId);
-            console.log('[Server] Registro atualizado com sucesso no Supabase:', supabaseResult);
+            console.log('[Server] Registro atualizado com sucesso no Supabase:', JSON.stringify(supabaseResult));
         } catch (supabaseError) {
             console.error(`[Server] Erro ao atualizar registro ${id} no Supabase (não crítico):`, supabaseError);
             console.error('[Server] Detalhes do erro:', {

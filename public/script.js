@@ -1563,6 +1563,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     else if ((key.includes('data') || key.includes('Data')) && body[key] === '') {
                         cleanBody[key] = null;
                     }
+                    // Converter campos numéricos para números
+                    else if (key.includes('quantidade') && body[key] !== null) {
+                        cleanBody[key] = parseFloat(body[key]);
+                    }
                     // Manter outros valores como estão, exceto undefined
                     else if (body[key] !== undefined) {
                         cleanBody[key] = body[key];
