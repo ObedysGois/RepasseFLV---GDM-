@@ -3,7 +3,7 @@ services:
     name: repasselist-gdm-backend
     env: node
     buildCommand: npm install
-    startCommand: npm start
+    startCommand: npm run update:render
     envVars:
       - key: NODE_VERSION
         value: 18.18.0
