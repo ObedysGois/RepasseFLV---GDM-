@@ -10,6 +10,7 @@
     "start": "node src/server.js",
     "start:render": "bash render-start.sh",
     "update:render": "bash render-update.sh",
+    "update:render:fixed": "bash render-update-fixed.sh",
     "start:api-only": "bash render-api-only.sh"
   },
   "dependencies": {
