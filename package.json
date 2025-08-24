@@ -9,7 +9,8 @@
   "scripts": {
     "start": "node src/server.js",
     "start:render": "bash render-start.sh",
-    "update:render": "bash render-update.sh"
+    "update:render": "bash render-update.sh",
+    "start:api-only": "bash render-api-only.sh"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.7",
